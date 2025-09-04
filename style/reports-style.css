@@ -1,0 +1,167 @@
+/* --- REPORTS PAGE STYLES --- */
+/* .filter-bar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1.5rem;
+  padding: 1.5rem;
+  background-color: var(--white-color);} */
+
+.sidebar {
+  width: 440px;
+  background-color: var(--white-color);
+  border-right: 1px solid var(--border-color);
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.05);
+  transition: width 0.3s;
+}
+
+.filter-bar{
+    display: flex;
+    flex-direction: row; /* Ensures the horizontal layout*/
+    justify-content: center;
+    align-items: center;
+    gap: 1.5rem;
+    padding: 1.5rem;
+    background-color: var(--white-color);
+    flex-wrap: wrap-reverse;
+}
+
+.filter-bar .fitler-select,
+.filter-bar .form-control{
+    min-width: 200px;
+    flex: 0 1 auto;
+}
+
+.filter-bar .form-select,
+.filter-bar .form-control,
+.report-card .btn,
+.modal-footer .btn {
+  border: 1px solid var(--border-color);
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+  font-weight: 500;
+  transition: all 0.2s ease-in-out;
+}
+
+.filter-bar .form-select:hover,
+.filter-bar .form-control:hover,
+.report-card .btn:hover,
+.modal-footer .btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.filter-bar .form-select,
+.filter-bar .form-control {
+  width: auto;
+  min-width: 200px;
+}
+
+.report-card {
+  padding: 1.5rem;
+  height: 100%;
+}
+
+.report-card .card-title {
+  color: var(--primary-color);
+  font-weight: 600;
+}
+
+.report-card p {
+  margin-bottom: 0.5rem;
+}
+
+.status-text {
+  font-weight: 600;
+}
+
+.status-success {
+  color: var(--success-color);
+}
+
+.status-fail {
+  color: var(--danger-color);
+}
+
+.report-card .card-actions {
+  display: flex;
+  gap: 0.5rem;
+  border-top: 1px solid var(--border-color);
+  padding-top: 1rem;
+  margin-top: 1rem;
+}
+
+.modal-header {
+  background-color: var(--primary-color);
+  color: var(--white-color);
+}
+
+.modal-header .btn-close {
+  filter: invert(1) grayscale(100%) brightness(200%);
+}
+
+/* --- Flatpickr Calendar Custom Theme --- */
+.flatpickr-calendar {
+  background-color: var(--white-color);
+  border-radius: 10px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+  border: 1px solid var(--border-color);
+  font-family: var(--font-family);
+}
+.flatpickr-day.selected,
+.flatpickr-day.startRange,
+.flatpickr-day.endRange {
+  background: var(--primary-color);
+  border-color: var(--primary-color);
+}
+.flatpickr-day:hover {
+  background: var(--light-blue-bg);
+}
+.flatpickr-months .flatpickr-month {
+  color: var(--primary-color);
+  font-weight: 600;
+}
+.flatpickr-weekdays {
+  background-color: var(--light-blue-bg);
+}
+span.flatpickr-weekday {
+  color: var(--text-color);
+  font-weight: 500;
+}
+
+/*Trying to add scroll-bar to container*/
+#cardsContainer {
+  max-height: 500px; /* Adjust height as needed */
+  overflow-y: auto;  /* Enables vertical scrolling */
+  padding-right: 4px; /* Optional: prevents content from being hidden behind scrollbar */
+}
+
+
+
+
+/* --- Flatpickr Calendar Custom Theme --- */
+.flatpickr-calendar {
+    background-color: var(--white-color);
+    border-radius: 10px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+    border: 1px solid var(--border-color);
+    font-family: var(--font-family);
+}
+.flatpickr-day.selected, .flatpickr-day.startRange, .flatpickr-day.endRange {
+    background: var(--primary-color);
+    border-color: var(--primary-color);
+}
+.flatpickr-day:hover {
+    background: var(--light-blue-bg);
+}
+.flatpickr-months .flatpickr-month {
+    color: var(--primary-color);
+    font-weight: 600;
+}
+.flatpickr-weekdays {
+    background-color: var(--light-blue-bg);
+}
+span.flatpickr-weekday {
+    color: var(--text-color);
+    font-weight: 500;
+}

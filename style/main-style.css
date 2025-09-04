@@ -1,0 +1,499 @@
+/*Predefined Variables*/
+:root {
+  /* --primary-color: #0d6efd; */
+  --primary-color : #0D6EFD;
+  --light-blue-bg: #e9f4ff;
+  --white-color: #ffffff;
+  --text-color: #212529;
+  --text-muted-color: #6c757d;
+  --border-color: #dee2e6;
+  --success-color: #198754;
+  --danger-color: #dc3545;
+  --font-family: "Poppins", sans-serif;
+}
+
+/*Body Styling*/
+body {
+  font-family: var(--font-family);
+  background-color: var(--light-blue-bg);
+  color: var(--text-color);
+}
+
+/*Sidebar Styling*/
+.sidebar {
+  width: 340px;
+  background-color: var(--white-color);
+  border-right: 1px solid var(--border-color);
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.05);
+  transition: width 0.3s;
+}
+
+/*Sidebar Image Not Added*/
+.headd{
+  font-family: var(--font-family);
+  text-shadow: #212529;
+}
+
+/*Sidebar Nav Icon*/
+.sidebar .nav-link {
+  display: flex;
+  align-items: center;
+  color: var(--text-muted-color);
+  font-weight: 500;
+  padding: 12px 15px;
+  margin-bottom: 8px;
+  border-radius: 10px;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+/*Icons in Sidebar*/
+.sidebar .nav-link i {
+  margin-right: 10px;
+  font-size: 1.5rem;
+}
+
+/*Sidebar elements on hover*/
+.sidebar .nav-link:hover {
+  background-color: var(--light-blue-bg);
+  color: var(--primary-color);
+}
+
+/*Sidebar Element Active*/
+.sidebar .nav-link.active {
+  background-color: var(--primary-color);
+  color: var(--white-color);
+  box-shadow: 2px 4px 8px rgba(13, 110, 253, 0.3);
+}
+.active-lite{
+  background-color: lightblue;
+  color: var(--white-color);
+  box-shadow: 2px 4px 8px rgba(13, 110, 253, 0.3);
+}
+
+/*Active onHover*/
+.sidebar .nav-link.active:hover {
+  color: var(--white-color);
+}
+
+/*User Profiles*/
+.user-profile {
+  background-color: #f8f9fa;
+  border: 1px solid var(--border-color);
+}
+/*End Sidebar*/
+
+/*Styling for Main-Content*/
+
+.main-content {
+  padding: 32px;
+}
+
+/*Top Button Icon - Two Icons*/
+
+.btn-icon {
+  background-color: var(--primary-color);
+  border: 1px solid var(--primary-color);
+  /* border-radius: 12px; */
+  width: 40px;
+  height: 40px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  color: var(--white-color);
+  text-decoration: None;
+}
+
+/*For the Sideabr Animation*/
+.sidebar-dropdown {
+  height: 0;
+  overflow: hidden;
+  transition: height 0.4s ease;
+}
+
+.sidebar-dropdown.open {
+  height: auto;
+  padding-left: 20px;
+}
+
+.arrow-icon {
+  transition: transform 0.3s ease;
+}
+
+.arrow-icon.rotate {
+  transform: rotate(180deg);
+}
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+
+
+/*================*/
+/*
+    ABOVE IS COMMON FOR ALL THE PAGES
+*/
+/*===============*/
+
+/*Adding the button-icon for card*/
+.btn-icon-card {
+  background-color: var(--white-color);
+  border: 1px solid var(--white-color);
+  /* border-radius: 12px; */
+  width: 30px;
+  height: 40px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1rem;
+  color: var(--primary-color);
+}
+
+/*For Date Picker : Range*/
+.date-range-picker {
+  display: inline-flex;
+  align-items: center;
+  background-color: var(--white-color);
+  border: 1px solid var(--border-color);
+  padding: 8px 16px;
+  border-radius: 12px;
+  font-weight: 500;
+}
+
+/*For Positioning*/
+.date-range-picker i {
+  margin-right: 10px;
+  font-size: 1rem;
+}
+
+/*Bootstrap Card : Styling*/
+
+/*Adding Card-Header : Box-Style, Shadows, Radius*/
+
+/*Card Heading*/
+.card-header {
+  border-radius: 50px;
+}
+
+/*Card Radius*/
+.card {
+  border-radius: 20px 20px 20px 20px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.07);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+/*On card Hover*/
+.card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 30px rgba(0 0 0 0.1);
+}
+
+/*The Static Card*/
+.stat-card .card-body {
+  padding: 0.3rem;
+}
+
+/*The Static Icon Inside The Static Box*/
+.stat-icon {
+  /* width: 30px; */
+  /* height: 60px; */
+  border-radius: 50%;
+  background-color: var(--light-blue-bg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/*Top Static cards with number icons in main page*/
+.stat-icon i {
+  font-size: 10px;
+}
+
+.stat-card h3 {
+  font-size: 1.4rem;
+}
+
+.stat-card p {
+  font-size: 0.8rem;
+  font-weight: 900;
+}
+
+.stat-card small {
+  font-size: 11px;
+  font-weight: 400;
+}
+
+/*Adding the circle*/
+
+.chart-circle {
+  width: 110px;
+  height: 110px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.chart-circle::before {
+  content: "";
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  right: 15px;
+  bottom: 15px;
+  background: var(--white-color);
+  border-radius: 50%;
+}
+
+.chart-percent {
+  font-size: 1.45rem;
+  font-weight: 800;
+  z-index: 1;
+}
+
+.chart-circle.red {
+  background: conic-gradient(#ff5b5b 80%, #e0e0e0 80%);
+  color: #ff5b5b;
+  font-family: var(--font-family);
+}
+
+.chart-circle.green {
+  background: conic-gradient(#a1dea3 22%, #e0e0e0 22%);
+  color: #a1dea3;
+  font-family: var(--font-family);
+}
+
+.chart-circle.yellow {
+  background: conic-gradient(#f7c604 36%, #e0e0e0 36%);
+  color: #f7c604;
+}
+
+.chart-circle.blue {
+  background: conic-gradient(#ff5b5b 80%, #e0e0e0 80%);
+  color: #ff5b5b;
+}
+
+/*Adding the styling for the bar chart*/
+.bar-chart {
+  display: flex;
+  align-items: end;
+  gap: 10px;
+  height: 80px;
+  margin-bottom: 12px;
+}
+
+@media (min-width: 1024px) {
+  .bar-chart {
+    height: 110px;
+    gap: 18px;
+  }
+}
+
+.bar {
+  width: 10px;
+  border-radius: 2px;
+}
+
+@media (min-width: 1024px) {
+  .bar {
+    width: 14px;
+  }
+}
+
+.bar.red {
+  background-color: #ff5b5b;
+}
+
+.bar.yellow {
+  background-color: #f7c604;
+}
+
+.bar-labels {
+  display: flex;
+  justify-content: space-around;
+  font-size: 10px;
+  font-weight: 500;
+  color: #a2a2a2;
+  text-align: center;
+}
+
+@media (min-width: 1024px) {
+  .bar-labels {
+    font-size: 12px;
+    line-height: 18px;
+  }
+}
+
+/*Adding the content for the heatmaps*/
+.heatmap-image {
+  width: 100%;
+  max-width: 200px;
+  height: auto;
+  margin: 10px auto;
+  display: block;
+}
+
+/* @media (min-width: 1024px) {
+  .heatmap-image {
+    max-width: 276px;
+    margin: 64px auto 0;
+  }
+} */
+
+.heatmap-legend {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 6px;
+  font-size: 15px;
+  color: #a2a2a2;
+}
+
+/* @media (min-width: 1024px) {
+  .heatmap-legend {
+    font-size: 14px;
+    line-height: 21px;
+  }
+} */
+
+.legend-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.legend-color {
+  width: 8px;
+  height: 8px;
+  border-radius: 6px;
+}
+
+/* @media (min-width: 1024px) {
+  .legend-color {
+    width: 12px;
+    height: 12px;
+  }
+} */
+
+.legend-color.blue {
+  background-color: #2d9cdb;
+}
+
+.legend-color.red {
+  background-color: #ff5b5b;
+}
+
+/*Adding the style for the wave graph*/
+.chart-labels {
+    display: flex;
+    justify-content: space-between;
+    font-size: 12px;
+    font-weight: 500;
+    color: #464154;
+}
+
+@media (min-width: 1024px) {
+    .chart-labels {
+        font-size: 14px;
+        line-height: 21px;
+    }
+}
+
+/*Need to check this*/
+.aging-dashboard {
+    background-color: #ffffff;
+    border-radius: 14px;
+    padding: 12px 20px;
+    box-shadow: 0px 4px 4px #0000000a;
+}
+
+@media (min-width: 1024px) {
+    .aging-dashboard {
+        padding: 16px 30px;
+    }
+}
+
+.aging-subtitle {
+    font-size: 12px;
+    font-weight: 500;
+    color: #b9babd;
+    margin-bottom: 25px;
+}
+
+@media (min-width: 1024px) {
+    .aging-subtitle {
+        font-size: 16px;
+        line-height: 24px;
+        margin-bottom: 42px;
+    }
+}
+
+.chart-area {
+    position: relative;
+    height: 100px;
+    margin-bottom: 16px;
+}
+
+@media (min-width: 1024px) {
+    .chart-area {
+        height: 158px;
+    }
+}
+
+/*For the excel view*/
+
+/*This is used to view the excel column*/
+#user-list-container {
+  height: 50vh;
+  overflow-y: auto;
+  padding-right: 0.5rem;
+}
+
+.call-log-item {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  padding: 1.25rem 1.5rem; /* Increased padding */
+  margin-bottom: 1rem;
+  border: 1px solid var(--border-color);
+  border-radius: 15px; /* Curved radius */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05); /* Subtle shadow */
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.call-log-item:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+}
+
+.call-status-icon {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  color: var(--white-color);
+  font-size: 1.5rem;
+}
+
+.call-status-icon.status-success {
+  background-color: var(--success-color);
+}
+.call-status-icon.status-fail {
+  background-color: var(--danger-color);
+}
+
+.call-details {
+  flex-grow: 1;
+}
+.call-details h5 {
+  font-weight: 600;
+}
+.call-duration {
+  font-weight: 500;
+  color: var(--text-muted-color);
+}

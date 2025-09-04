@@ -1,0 +1,422 @@
+<!--MAIN PAGE-->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Collection Analytics : AR Portal</title>
+
+    <!--The CDN-->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!--Style Sheets-->
+    <link rel="stylesheet" href="./style/main-style.css" />
+
+    <!--Icons-->
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+  </head>
+
+  <body>
+    <!--BS: Flex-Box-->
+    <div class="d-flex">
+      <nav class="sidebar vh-100 p-4 d-flex flex-column justify-content-center">
+        <div>
+          <img src="./asset/logo.png">
+          <h5 class="headd text-primary fw-bold" style="margin-left: 40px; margin-top: 10px;">AR Webportal</h5>
+          <div class="sidebar-header d-flex align-items-center mb-3">
+            <!--Need to add CG Logo-->
+          </div>
+          <ul class="nav flex-column">
+            <li class="nav-item">
+              <a class="nav-link active" href="#">
+                <!--Each Page Show active-->
+                <i class="ph-bold ph-layout"></i>
+                <!--ICON-->
+                <span>Collection Analytics</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="./pages/caller.html">
+                <i class="ph ph-bell"></i>
+                <span>Caller</span>
+              </a>
+            </li>
+            <!--Here we need the Pre-Call and Post-Call -->
+            <!--Having two column setup-->
+
+            <!-- <li class="nav-item">
+              <a class="nav-link" href="./Pages/caller.html">
+                <i class="ph ph-user-list"></i>
+                <span>Calls</span>
+              </a>
+            </li> -->
+
+            <li class="nav-item">
+              <a class="nav-link" href="#" onclick="toggleDropdown(event)">
+                <i class="ph ph-user-list"></i>
+                <span>Calls</span>
+                <i class="ph ph-caret-down arrow-icon"></i>
+              </a>
+              <ul class="sidebar-dropdown">
+                <li>
+                  <a class="nav-link dropdown-item" href="./pages/pre-call.html">
+                    <i class="ph ph-phone-call"></i>
+                    <span>Precall</span>
+                  </a>
+                </li>
+                <li>
+                  <a
+                    class="nav-link dropdown-item"
+                    href="./pages/post-call.html"
+                  >
+                    <i class="ph ph-phone-disconnect"></i>
+                    <span>Post Call</span>
+                  </a>
+                </li>
+              </ul>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link" href="./pages/reports.html">
+                <i class="ph ph-chat-circle-dots"></i>
+                <span>Reports</span>
+              </a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link" href="#">
+                <i class="ph ph-chart-bar"></i>
+                <span>Predective Analytics</span>
+              </a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link" href="#">
+                <i class="ph ph-gear"></i>
+                <span>Settings</span>
+              </a>
+            </li>
+          </ul>
+          <div class="chats-history mt-1">
+            <h6 class="text-muted fw-bold ps-3 mb-3">Call History</h6>
+            <ul class="nav flex-column">
+              <li class="nav-item">
+                <a class="nav-link" href="./pages/History/call-history.html">
+                  <i class="ph ph-chat-circle-dots"></i>
+                  <span>Call History of Today</span>
+                </a>
+              </li>
+              <li class="nav-item">
+                <!-- Here I need to view the transcript -->
+                <a class="nav-link" href="./pages/History/client-history.html">
+                  <i class="ph ph-archive"></i>
+                  <span>Client History</span>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="user-profile d-flex align-items-center p-2 rounded-3" style="margin-top: 5px;">
+          <i class="ph-bold ph-user p-1"></i>
+          <div class="flex-grow-1">
+            <h6 class="mb-0 fw-bold">John Doe</h6>
+          </div>
+          <i class="ph ph-sign-out"></i>
+        </div>
+      </nav>
+
+      <!-- Main Content -->
+      <main class="main-content flex-grow-1 p-4">
+        <header
+          class="d-flex justify-content-between align-items-center mb-3 p-1"
+          style="background-color: white; border-radius: 15px"
+        >
+          <h2
+            class="fw-bold"
+            style="font-size: 1.4rem; padding-left: 1.01rem; padding-top: 5px"
+          >
+            Collection Analytics
+          </h2>
+          <div class="d-flex align-items-center">
+            <span class="text-muted me-3"
+              >Last Update: 14 August 2024, 03:51 PM</span
+            >
+            <button class="btn btn-icon me-2">
+              <i class="ph ph-question"></i>
+            </button>
+            <button class="btn btn-icon"><i class="ph ph-bell"></i></button>
+          </div>
+        </header>
+
+        <!-- Date Range Picker -->
+        <div class="date-range-picker mb-4">
+          <i class="ph ph-calendar-blank"></i>
+          <span>30 Aug 2024 - 31 Aug 2024</span>
+        </div>
+
+        <!-- Stats Cards -->
+        <div class="row g-4">
+          <!--Row Gap-4-->
+          <div class="col-md-3">
+            <!--First Column-->
+            <div class="card stat-card">
+              <div class="card-body d-flex align-items-center">
+                <div class="stat-icon m-3">
+                  <div class="icon-circle"></div>
+                </div>
+                <div>
+                  <h3 class="fw-bold">1485</h3>
+                  <p class="text-muted mb-0">Total Collection</p>
+                  <small class="text-success">
+                    <i class="ph-bold ph-arrow-up"></i> 4% (30 days)
+                  </small>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-3">
+            <div class="card stat-card">
+              <div class="card-body d-flex align-items-center">
+                <div class="stat-icon m-3">
+                  <div class="icon-circle"></div>
+                </div>
+                <div>
+                  <h3 class="fw-bold">350</h3>
+                  <p class="text-muted mb-0">Pending Collection</p>
+                  <small class="text-danger">
+                    <i class="ph-bold ph-arrow-down"></i> 2% (30 days)
+                  </small>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-3">
+            <div class="card stat-card">
+              <div class="card-body d-flex align-items-center">
+                <div class="stat-icon m-3">
+                  <div class="icon-circle"></div>
+                </div>
+                <div>
+                  <h3 class="fw-bold">120</h3>
+                  <p class="text-muted mb-0">Resolved Disputes</p>
+                  <small class="text-success">
+                    <i class="ph-bold ph-arrow-up"></i> 42% (30 days)
+                  </small>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-3">
+            <div class="card stat-card">
+              <div class="card-body d-flex align-items-center">
+                <div class="stat-icon m-3">
+                  <div class="icon-circle"></div>
+                </div>
+                <div>
+                  <h3 class="fw-bold">$58200</h3>
+                  <p class="text-muted mb-4">Total Revenue Collected</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- End Stats Cards -->
+
+        <!--Analytics & Scoring Card-->
+        <div class="row g-4" style="margin-top: 2px">
+          <div class="col-md-3">
+            <div class="card analytics-card h-100">
+              <div
+                class="card-header d-flex justify-content-between align-items-center bg-white border-0 pt-3"
+              >
+                <h5 class="fw-bold">Dispute Analytics</h5>
+                <button class="btn btn-icon-card">
+                  <i class="ph ph-dots-three-outline-vertical"></i>
+                </button>
+              </div>
+              <div
+                class="card-body d-flex justify-content-around align-items-center"
+              >
+                <div class="text-center">
+                  <div class="chart-circle red">
+                    <span class="chart-percent">80%</span>
+                  </div>
+                  <p class="mt-2 text-muted">Unresolved</p>
+                </div>
+                <div class="text-center">
+                  <div class="chart-circle green">
+                    <span class="chart-percent">22%</span>
+                  </div>
+                  <p class="mt-2 text-muted">Resolved</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-3">
+            <div class="card analytics-card h-100">
+              <div
+                class="card-header d-flex justify-content-between align-items-center bg-white border-0 pt-3"
+              >
+                <h5 class="fw-bold">Customer Risk Scoring</h5>
+                <button class="btn btn-icon-card">
+                  <i class="ph ph-dots-three-outline-vertical"></i>
+                </button>
+              </div>
+              <div
+                class="card-body d-flex justify-content-around align-items-center"
+              >
+                <div class="text-center">
+                  <div class="chart-circle yellow">
+                    <span class="chart-percent">36%</span>
+                  </div>
+                  <p class="mt-2 text-muted">Medium</p>
+                </div>
+                <div class="text-center">
+                  <div class="chart-circle blue">
+                    <span class="chart-percent">60%</span>
+                  </div>
+                  <p class="mt-2 text-muted">High</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-3">
+            <div class="card analytics-card h-100">
+              <div
+                class="card-header d-flex justify-content-between align-items-center bg-white border-0 pt-3"
+              >
+                <h5 class="fw-bold">Payment Pattern Analysis</h5>
+                <button class="btn btn-icon-card">
+                  <i class="ph ph-dots-three-outline-vertical"></i>
+                </button>
+              </div>
+              <div
+                class="card-body d-flex justify-content-around align-items-center"
+              >
+                <div class="text-center">
+                  <!--Inside this Place the Heatmaps-->
+                  <div class="payment-analysis">
+                    <div class="bar-chart">
+                      <div class="bar red" style="height: 60%"></div>
+                      <div class="bar yellow" style="height: 80%"></div>
+                      <div class="bar red" style="height: 40%"></div>
+                      <div class="bar yellow" style="height: 70%"></div>
+                      <div class="bar red" style="height: 60%"></div>
+                      <div class="bar yellow" style="height: 25%"></div>
+                    </div>
+
+                    <div class="bar-labels">
+                      <span>Delays</span>
+                      <span style="margin-left: 20px"
+                        >Partial<br />Payment</span
+                      >
+                      <span style="margin-left: 10px">Over<br />payments</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!--Adding one more graph next to it-->
+
+          <div class="col-md-3">
+            <div class="card analytics-card h-80">
+              <div
+                class="card-header d-flex justify-content-between align-items-center bg-white border-0 pt-3"
+              >
+                <h5 class="fw-bold">Top Accounts Heatmaps</h5>
+                <button class="btn btn-icon-card">
+                  <i class="ph ph-dots-three-outline-vertical"></i>
+                </button>
+              </div>
+              <div
+                class="card-body d-flex justify-content-around align-items-center"
+              >
+                <div class="text-center">
+                  <!--Inside this Place the Heatmaps-->
+                  <div class="heatmap-legend">
+                    <div class="legend-item">
+                      <div class="legend-color blue"></div>
+                      <span>One Time</span>
+                    </div>
+                    <div class="legend-item">
+                      <div class="legend-color red"></div>
+                      <span>Partial</span>
+                    </div>
+                  </div>
+                  <img
+                    src="./asset/img_image_1.png"
+                    alt="Heatmap"
+                    class="heatmap-image"
+                  />
+                  <div
+                    style="
+                      text-align: center;
+                      margin: 8px 0;
+                      font-size: 12px;
+                      color: #464154;
+                    "
+                  >
+                    Outstanding Balance
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- End Analytics & Scoring Card -->
+        <!--Adding one more row -->
+        <div class="row" style="margin-top: 33px">
+          <div class="col-lg-6">
+            <div class="card analytics-card h-100">
+              <div
+                class="card-header d-flex justify-content-between align-items-center bg-white border-0 pt-3"
+              >
+                <h5 class="fw-bold">Aging Impact Dashboard</h5>
+                <i class="ph ph-dots-three-outline-vertical"></i>
+              </div>
+              <div
+                class="card-body d-flex justify-content-around align-items-center"
+              >
+                <div class="chart-area">
+                  <img
+                    src="./asset/img_vector_7.png"
+                    alt="Aging Chart"
+                    style="width: 100%; height: 100%; object-fit: contain"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!--Ending the one more row-->
+        <footer class="text-center text-muted" style="margin-top: 10px">
+          <small style="color: #6495ed; font-weight: 800"
+            >© Copgemini 2025. all rights reserved.</small
+          >
+        </footer>
+      </main>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="./scripts/drop-down-animation.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>
