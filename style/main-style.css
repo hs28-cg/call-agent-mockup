@@ -1,7 +1,11 @@
+/*
+MAIN CSS FOLDER
+*/
+
 /*Predefined Variables*/
 :root {
   /* --primary-color: #0d6efd; */
-  --primary-color : #0D6EFD;
+  --primary-color: #0d6efd;
   --light-blue-bg: #e9f4ff;
   --white-color: #ffffff;
   --text-color: #212529;
@@ -29,7 +33,7 @@ body {
 }
 
 /*Sidebar Image Not Added*/
-.headd{
+.headd {
   font-family: var(--font-family);
   text-shadow: #212529;
 }
@@ -64,7 +68,7 @@ body {
   color: var(--white-color);
   box-shadow: 2px 4px 8px rgba(13, 110, 253, 0.3);
 }
-.active-lite{
+.active-lite {
   background-color: lightblue;
   color: var(--white-color);
   box-shadow: 2px 4px 8px rgba(13, 110, 253, 0.3);
@@ -104,6 +108,29 @@ body {
   text-decoration: None;
 }
 
+.card-button-macha {
+  background-color: var(--primary-color);
+  border: 1px solid var(--primary-color);
+  border: 1px solid var(--white-color);
+  border-radius: 10px;
+  margin-top: 30px;
+  /* margin-bottom: 30px; */
+  padding: 10px;
+  color: white;
+}
+
+/*Adding for post-call to show the summary- highight*/
+.highlight {
+  background-color: yellow;
+  font-weight: bold;
+}
+
+.summary-text {
+  white-space: pre-line; /* keeps line breaks */
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
 /*For the Sideabr Animation*/
 .sidebar-dropdown {
   height: 0;
@@ -129,8 +156,6 @@ ul {
   margin: 0;
   padding: 0;
 }
-
-
 
 /*================*/
 /*
@@ -389,59 +414,59 @@ ul {
 
 /*Adding the style for the wave graph*/
 .chart-labels {
-    display: flex;
-    justify-content: space-between;
-    font-size: 12px;
-    font-weight: 500;
-    color: #464154;
+  display: flex;
+  justify-content: space-between;
+  font-size: 12px;
+  font-weight: 500;
+  color: #464154;
 }
 
 @media (min-width: 1024px) {
-    .chart-labels {
-        font-size: 14px;
-        line-height: 21px;
-    }
+  .chart-labels {
+    font-size: 14px;
+    line-height: 21px;
+  }
 }
 
 /*Need to check this*/
 .aging-dashboard {
-    background-color: #ffffff;
-    border-radius: 14px;
-    padding: 12px 20px;
-    box-shadow: 0px 4px 4px #0000000a;
+  background-color: #ffffff;
+  border-radius: 14px;
+  padding: 12px 20px;
+  box-shadow: 0px 4px 4px #0000000a;
 }
 
 @media (min-width: 1024px) {
-    .aging-dashboard {
-        padding: 16px 30px;
-    }
+  .aging-dashboard {
+    padding: 16px 30px;
+  }
 }
 
 .aging-subtitle {
-    font-size: 12px;
-    font-weight: 500;
-    color: #b9babd;
-    margin-bottom: 25px;
+  font-size: 12px;
+  font-weight: 500;
+  color: #b9babd;
+  margin-bottom: 25px;
 }
 
 @media (min-width: 1024px) {
-    .aging-subtitle {
-        font-size: 16px;
-        line-height: 24px;
-        margin-bottom: 42px;
-    }
+  .aging-subtitle {
+    font-size: 16px;
+    line-height: 24px;
+    margin-bottom: 42px;
+  }
 }
 
 .chart-area {
-    position: relative;
-    height: 100px;
-    margin-bottom: 16px;
+  position: relative;
+  height: 100px;
+  margin-bottom: 16px;
 }
 
 @media (min-width: 1024px) {
-    .chart-area {
-        height: 158px;
-    }
+  .chart-area {
+    height: 158px;
+  }
 }
 
 /*For the excel view*/

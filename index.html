@@ -1,4 +1,7 @@
-<!--MAIN PAGE-->
+<!--
+MAIN PAGE
+This is the Main Index-Page
+-->
 
 <!DOCTYPE html>
 <html lang="en">
@@ -20,6 +23,7 @@
 
     <!--Style Sheets-->
     <link rel="stylesheet" href="./style/main-style.css" />
+    <link rel="stylesheet" href="./style/bot-style.css" />
 
     <!--Icons-->
     <script src="https://unpkg.com/@phosphor-icons/web"></script>
@@ -30,26 +34,31 @@
     <div class="d-flex">
       <nav class="sidebar vh-100 p-4 d-flex flex-column justify-content-center">
         <div>
-          <img src="./asset/logo.png">
-          <h5 class="headd text-primary fw-bold" style="margin-left: 40px; margin-top: 10px;">AR Webportal</h5>
+          <img src="./asset/logo.png" />
+          <h5
+            class="headd text-primary fw-bold"
+            style="margin-left: 40px; margin-top: 10px"
+          >
+            AR Webportal
+          </h5>
           <div class="sidebar-header d-flex align-items-center mb-3">
             <!--Need to add CG Logo-->
           </div>
           <ul class="nav flex-column">
             <li class="nav-item">
-              <a class="nav-link active" href="#">
+              <a class="nav-link active" href="./index.html">
                 <!--Each Page Show active-->
                 <i class="ph-bold ph-layout"></i>
                 <!--ICON-->
                 <span>Collection Analytics</span>
               </a>
             </li>
-            <li class="nav-item">
+            <!-- <li class="nav-item">
               <a class="nav-link" href="./pages/caller.html">
                 <i class="ph ph-bell"></i>
                 <span>Caller</span>
               </a>
-            </li>
+            </li> -->
             <!--Here we need the Pre-Call and Post-Call -->
             <!--Having two column setup-->
 
@@ -62,15 +71,19 @@
 
             <li class="nav-item">
               <a class="nav-link" href="#" onclick="toggleDropdown(event)">
-                <i class="ph ph-user-list"></i>
+                <i class="ph ph-film-script"></i>
                 <span>Calls</span>
-                <i class="ph ph-caret-down arrow-icon"></i>
+                <!-- <i class="ph ph-caret-down arrow-icon"></i> -->
               </a>
               <ul class="sidebar-dropdown">
                 <li>
-                  <a class="nav-link dropdown-item" href="./pages/pre-call.html">
-                    <i class="ph ph-phone-call"></i>
-                    <span>Precall</span>
+                  <a
+                    class="nav-link dropdown-item"
+                    href="./pages/pre-call.html"
+                  >
+                    <!-- <i class="ph ph-phone-call"></i> -->
+                    <i class="ph ph-robot"></i>
+                    <span>Precall Agent</span>
                   </a>
                 </li>
                 <li>
@@ -78,11 +91,18 @@
                     class="nav-link dropdown-item"
                     href="./pages/post-call.html"
                   >
-                    <i class="ph ph-phone-disconnect"></i>
-                    <span>Post Call</span>
+                    <i class="ph ph-robot"></i>
+                    <span>Postcall Agent</span>
                   </a>
                 </li>
               </ul>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link" href="./pages/caller.html">
+                <i class="ph ph-phone-call"></i>
+                <span>Caller Agent</span>
+              </a>
             </li>
 
             <li class="nav-item">
@@ -125,7 +145,10 @@
             </ul>
           </div>
         </div>
-        <div class="user-profile d-flex align-items-center p-2 rounded-3" style="margin-top: 5px;">
+        <div
+          class="user-profile d-flex align-items-center p-2 rounded-3"
+          style="margin-top: 5px"
+        >
           <i class="ph-bold ph-user p-1"></i>
           <div class="flex-grow-1">
             <h6 class="mb-0 fw-bold">John Doe</h6>
@@ -148,7 +171,7 @@
           </h2>
           <div class="d-flex align-items-center">
             <span class="text-muted me-3"
-              >Last Update: 14 August 2024, 03:51 PM</span
+              >Last Update: 17 September 2025, 03:51 PM</span
             >
             <button class="btn btn-icon me-2">
               <i class="ph ph-question"></i>
@@ -160,7 +183,7 @@
         <!-- Date Range Picker -->
         <div class="date-range-picker mb-4">
           <i class="ph ph-calendar-blank"></i>
-          <span>30 Aug 2024 - 31 Aug 2024</span>
+          <span>15 Sept 2025 - 18 Sept 2025</span>
         </div>
 
         <!-- Stats Cards -->
@@ -406,6 +429,44 @@
           </div>
         </div>
 
+        <!--Adding the chatbot -->
+        <!-- <button class="chat-float-btn" id="chatOpenBtn" aria-label="Open chat">
+          <img
+            src="../asset/Capgemini-Symbol.png"
+            alt="Bot"
+            style="
+              width: 50px;
+              height: 50px;
+              border-radius: 50%;
+              object-fit: cover;
+            "
+          />
+        </button> -->
+
+        <div class="floating-chat-window" id="floatingChatWindow">
+          <div class="chat-header">
+            <img src="../asset/Capgemini-Symbol.png" alt="Bot" />
+            <span class="chat-bot-name">James - AR Chat-Agent</span>
+            <button class="chat-close-btn" id="chatCloseBtn" title="Close chat">
+              &times;
+            </button>
+          </div>
+          <div class="chat-body" id="chatBody">
+            <div style="color: #888; font-size: 0.95em">
+              Hi! I’m James, your AR assistant. I can help you with 'invoice', 'account' and 'raise dispute'.
+            </div>
+          </div>
+          <form class="chat-input-area" id="chatInputForm" autocomplete="off">
+            <input
+              type="text"
+              id="chatInput"
+              placeholder="Type your message..."
+              autocomplete="off"
+            />
+            <button type="submit">Send</button>
+          </form>
+        </div>
+
         <!--Ending the one more row-->
         <footer class="text-center text-muted" style="margin-top: 10px">
           <small style="color: #6495ed; font-weight: 800"
@@ -416,6 +477,7 @@
     </div>
 
     <!-- Bootstrap JS -->
+    <script src="./scripts/bot-script.js"></script>
     <script src="./scripts/drop-down-animation.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
   </body>

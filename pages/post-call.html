@@ -5,103 +5,89 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Post Call Summaries : AR Portal</title>
 
-    <!--The CDN-->
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
       rel="stylesheet"
     />
-
     <link
       href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
       rel="stylesheet"
     />
-
-    <!--Style Sheets-->
     <link rel="stylesheet" href="../style/main-style.css" />
+    <link rel="stylesheet" href="../style/bot-style.css">
     <link rel="stylesheet" href="../style/reports-style.css" />
     <link
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css"
     />
+    <script src="https://unpkg.com/@phosphor-icons/web">
 
-    <!--Icons-->
-    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    </script>
   </head>
   <body>
     <div class="d-flex">
-      <nav class="sidebar vh-100 p-4 d-flex flex-column justify-content-center">
+      <nav class="sidebar vh-100 p-4 d-flex flex-column justify-content-center" style="width: 300px;">
         <div>
-          <img src="../asset/logo.png">
-          <h5 class="headd text-primary fw-bold" style="margin-left: 40px; margin-top: 10px;">AR Webportal</h5>
-          <div class="sidebar-header d-flex align-items-center mb-1">
-            <!--Need to add CG Logo-->
-            <!-- <h5 class="text-primary fw-bold">AR Webportal</h5> -->
-          </div>
+          <img src="../asset/logo.png" />
+          <h5
+            class="headd text-primary fw-bold"
+            style="margin-left: 40px; margin-top: 10px"
+          >
+            AR Webportal
+          </h5>
+          <div class="sidebar-header d-flex align-items-center mb-1"></div>
           <ul class="nav flex-column">
             <li class="nav-item">
               <a class="nav-link" href="../index.html">
-                <!--Each Page Show active-->
                 <i class="ph-bold ph-layout"></i>
-                <!--ICON-->
                 <span>Collection Analytics</span>
               </a>
             </li>
-            <li class="nav-item">
+            <!-- <li class="nav-item">
               <a class="nav-link" href="./caller.html">
                 <i class="ph ph-bell"></i>
                 <span>Caller</span>
               </a>
-            </li>
-            <!--Here we need the Pre-Call and Post-Call -->
-            <!--Having two column setup-->
-
-            <!-- <li class="nav-item">
-              <a class="nav-link" href="./Pages/caller.html">
-                <i class="ph ph-user-list"></i>
-                <span>Calls</span>
-              </a>
             </li> -->
-
             <li class="nav-item">
-              <a
-                class="nav-link active"
-                href="#"
-                onclick="toggleDropdown(event)"
-              >
-                <i class="ph ph-user-list"></i>
+              <a class="nav-link active" href="#" onclick="toggleDropdown(event)">
+                <i class="ph ph-film-script"></i>
                 <span>Calls</span>
-                <i class="ph ph-caret-down arrow-icon"></i>
+                <!-- <i class="ph ph-caret-down arrow-icon"></i> -->
               </a>
               <ul class="sidebar-dropdown">
                 <li>
                   <a class="nav-link dropdown-item" href="./pre-call.html">
-                    <i class="ph ph-phone-call"></i>
-                    <span>Precall</span>
+                    <i class="ph ph-robot"></i>
+                    <span>Precall Agent</span>
                   </a>
                 </li>
                 <li>
                   <a class="nav-link dropdown-item active" href="#">
-                    <i class="ph ph-phone-disconnect"></i>
-                    <span>Post Call</span>
+                    <i class="ph ph-robot"></i>
+                    <span>Postcall Agent</span>
                   </a>
                 </li>
               </ul>
             </li>
-
+            <li class="nav-item">
+              <a class="nav-link" href="./caller.html">
+                <i class="ph ph-phone-call"></i>
+                <span>Caller Agent</span>
+              </a>
+            </li>
             <li class="nav-item">
               <a class="nav-link" href="./reports.html">
                 <i class="ph ph-chat-circle-dots"></i>
                 <span>Reports</span>
               </a>
             </li>
-
             <li class="nav-item">
               <a class="nav-link" href="#">
                 <i class="ph ph-chart-bar"></i>
                 <span>Predective Analytics</span>
               </a>
             </li>
-
             <li class="nav-item">
               <a class="nav-link" href="#">
                 <i class="ph ph-gear"></i>
@@ -119,7 +105,6 @@
                 </a>
               </li>
               <li class="nav-item">
-                <!-- Here I need to view the transcript -->
                 <a class="nav-link" href="./History/client-history.html">
                   <i class="ph ph-archive"></i>
                   <span>Client History</span>
@@ -140,7 +125,6 @@
         </div>
       </nav>
 
-      <!-- Main Content -->
       <main class="main-content flex-grow-1 p-4">
         <header
           class="d-flex justify-content-between align-items-center mb-3 p-1"
@@ -154,7 +138,7 @@
           </h2>
           <div class="d-flex align-items-center">
             <span class="text-muted me-3"
-              >Last Update: 14 August 2024, 03:51 PM</span
+              >Last Update: 17 September 2025, 03:51 PM</span
             >
             <button class="btn btn-icon me-2">
               <i class="ph ph-question"></i>
@@ -163,51 +147,121 @@
           </div>
         </header>
 
-        <!-- Date Range Picker -->
         <div class="date-range-picker mb-4">
           <i class="ph ph-calendar-blank"></i>
-          <span>14 Aug 2024</span>
+          <span> 18 Sept 2025</span>
         </div>
 
-        <!-- Filter Bar -->
         <div class="filter-bar card mb-4">
           <select id="statusFilter" class="form-select">
             <option value="all">View All</option>
             <option value="success">Success</option>
-            <option value="notpicked">Not Picked</option>
+            <!-- <option value="notpicked">Pending</option>
+            <option value="notpicked">Dispute</option> -->
           </select>
           <select id="sortFilter" class="form-select">
             <option value="date">Sort by Date</option>
             <option value="amount">Sort by Amount</option>
           </select>
-          <!--Small button script to upload data for webcollect it will be done automatically-->
           <button class="btn btn-primary" onclick="handleUpload(this)">
-            Upload data to webcollect
+            Download Summary
           </button>
-
-          <script>
-            function handleUpload(button) {
-              alert("Manually entered data entered and saved to webcollect");
-              button.classList.remove("btn-primary");
-              button.classList.add("btn-success");
-            }
-          </script>
         </div>
 
-        <!-- Report Cards Scrollable Container -->
         <div class="reports-container">
-          <div id="cardsContainer" class="row g-4">
-            <!-- Cards will be injected here by JavaScript -->
-          </div>
+          <div id="cardsContainer" class="row g-4"></div>
         </div>
       </main>
     </div>
 
-    <!-- Transcript Modal -->
+    <div
+      class="modal fade"
+      id="reportIssueModal"
+      tabindex="-1"
+      aria-labelledby="reportIssueModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="reportIssueModalLabel">
+              Report an issue
+            </h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <div class="mb-3">
+              <label for="areaSelect" class="form-label"
+                >What area are you having problems with?</label
+              >
+              <select id="areaSelect" class="form-select mb-3">
+                <option selected>Billing</option>
+                <option>Technical</option>
+                <option>User Interface</option>
+                <option>Other</option>
+              </select>
+            </div>
+            <div class="mb-3">
+              <label for="severitySelect" class="form-label"
+                >Security Level</label
+              >
+              <select id="severitySelect" class="form-select">
+                <option selected>Severity 2</option>
+                <option>Severity 1</option>
+                <option>Severity 3</option>
+                <option>Severity 4</option>
+              </select>
+            </div>
+            <div class="mb-3">
+              <label for="subjectInput" class="form-label">Subject</label>
+              <input
+                type="text"
+                id="subjectInput"
+                class="form-control"
+                placeholder="I need help with..."
+              />
+            </div>
+            <div class="mb-3">
+              <label for="descriptionTextarea" class="form-label"
+                >Description</label
+              >
+              <textarea
+                id="descriptionTextarea"
+                class="form-control"
+                rows="5"
+                placeholder="Please include all information relevant to your issue."
+              ></textarea>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-bs-dismiss="modal"
+            >
+              Cancel
+            </button>
+            <button
+              type="button"
+              class="btn btn-primary"
+              onclick="handleReportSubmission()"
+            >
+              Submit
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    
     <div
       class="modal fade"
       id="transcriptModal"
-      tabindex="-1"
+      tabin`x="-1"
       aria-labelledby="transcriptModalLabel"
       aria-hidden="true"
     >
@@ -224,15 +278,11 @@
               aria-label="Close"
             ></button>
           </div>
-          <!--Below in the div we can replace it with the message-->
-
-          <!--After each call we need to display the entire transcript here-->
           <div class="modal-body">
             <textarea
               class="form-control"
               rows="10"
-              placeholder="Tom from Capgemini contacted MAX regarding an unpaid invoice of $500.00 that was due on August 01, 2025. MAX confirmed that the payment had already been made. Tom requested payment confirmation or transaction details to verify and update records. MAX agreed to share the details via mail. Tom acknowledged and said he would check email records and follow up if needed. MAX asked Tom to confirm once the records are reviewed. Tom assured MAX that he would review and update accordingly. The call ended with thanks and a goodbye.
-"
+              placeholder="Transcript goes here..."
             ></textarea>
           </div>
           <div class="modal-footer">
@@ -255,7 +305,6 @@
       </div>
     </div>
 
-    <!-- Details Modal -->
     <div
       class="modal fade"
       id="detailsModal"
@@ -279,41 +328,23 @@
               <thead>
                 <tr>
                   <th>Important Key Points</th>
-                  <!-- <th>Yes / No</th> -->
-                  <!-- <th>Detail 3</th>
-                  <th>Detail 4</th> -->
                 </tr>
               </thead>
               <tbody>
                 <tr>
                   <td contenteditable="true"></td>
-                  <!-- <td contenteditable="true"></td> -->
-                  <!-- <td contenteditable="true"></td>
-                  <td contenteditable="true"></td> -->
                 </tr>
                 <tr>
                   <td contenteditable="true"></td>
-                  <!-- <td contenteditable="true"></td> -->
-                  <!-- <td contenteditable="true"></td>
-                  <td contenteditable="true"></td> -->
                 </tr>
                 <tr>
                   <td contenteditable="true"></td>
-                  <!-- <td contenteditable="true"></td> -->
-                  <!-- <td contenteditable="true"></td>
-                  <td contenteditable="true"></td> -->
                 </tr>
                 <tr>
                   <td contenteditable="true"></td>
-                  <!-- <td contenteditable="true"></td> -->
-                  <!-- <td contenteditable="true"></td>
-                  <td contenteditable="true"></td> -->
                 </tr>
                 <tr>
                   <td contenteditable="true"></td>
-                  <!-- <td contenteditable="true"></td> -->
-                  <!-- <td contenteditable="true"></td>
-                  <td contenteditable="true"></td> -->
                 </tr>
               </tbody>
             </table>
@@ -333,72 +364,120 @@
             >
               Save Report
             </button>
-            <!--Additionally, I can take the Data and save it in excel sheet-->
           </div>
         </div>
       </div>
     </div>
+    <!-- <button class="chat-float-btn" id="chatOpenBtn" aria-label="Open chat">
+          <img
+            src="../asset/Capgemini-Symbol.png"
+            alt="Bot"
+            style="
+              width: 50px;
+              height: 52px;
+              border-radius: 50%;
+              object-fit: cover;
+            "
+          />
+        </button> -->
 
-    <!-- Bootstrap & Flatpickr JS -->
+        <div class="floating-chat-window" id="floatingChatWindow">
+          <div class="chat-header">
+            <img src="../asset/Capgemini-Symbol.png" alt="Bot" />
+            <span class="chat-bot-name">John - AR Bot</span>
+            <button class="chat-close-btn" id="chatCloseBtn" title="Close chat">
+              &times;
+            </button>
+          </div>
+          <div class="chat-body" id="chatBody">
+            <div style="color: #888; font-size: 0.95em">
+              Hi! I’m James, your AR assistant. I can help you with 'invoice', 'account' and 'raise dispute'.
+            </div>
+          </div>
+          <form class="chat-input-area" id="chatInputForm" autocomplete="off">
+            <input
+              type="text"
+              id="chatInput"
+              placeholder="Type your message..."
+              autocomplete="off"
+            />
+            <button type="submit">Close</button>
+          </form>
+        </div>
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
     <script src="../scripts/drop-down-animation.js"></script>
+
     <script>
       document.addEventListener("DOMContentLoaded", function () {
         const allUsers = [
           {
-            // Edit this Details, Add them same from the excel sheet only
-            name: "MAX",
+            name: "David",
             phone: "040-123-123",
             reason: "credit",
-            amount: 455.98,
-            date: "2025-08-01",
-            status: "Success",
+            amount: 1250.00,
+            last_call_date: "2025-08-25",
+            status: "Pending",
+            Note: "The customer stated that they, would try to pay the remaining loan payment in another 3 days",
+            RCA: "Issues with the banking server, account frozen",
+            Followup : "True",
+            Total_Invoices : 2
           },
           {
-            name: "LISA",
+            name: "Sophia Anderson",
             phone: "040-333-111",
             reason: "loan",
-            amount: 200.0,
-            date: "2025-08-01",
-            status: "Not Picked",
+            amount: 300.0,
+            last_call_date: "2025-08-01",
+            status: "Success",
+            Note: "The customer stated that they has raised a dispute and it was solved",
+            RCA: "Customer was charged extra $20.89 but no transcation was found",
+            Followup : "False",
+            Total_Invoices : 1
           },
           {
             name: "ANNA",
             phone: "040-555-789",
             reason: "loan",
             amount: 320.45,
-            date: "2025-08-02",
-            status: "Success",
+            last_call_date: "2025-08-02",
+            status: "Dispute",
+            Note: "The customer stated dispute, reagarding payment but did not clear on the promised date",
+            RCA: "Dispute was raised for $200.89, Charged twice for a item",
+            Followup : "True",
+            Total_Invoices : 1
           },
-          {
-            name: "MARK",
-            phone: "040-444-222",
-            reason: "bill",
-            amount: 550.5,
-            date: "2025-08-02",
-            status: "Not Picked",
-          },
-          {
-            name: "JOHN",
-            phone: "040-222-999",
-            reason: "bill",
-            amount: 123.0,
-            date: "2025-08-03",
-            status: "Success",
-          },
+          // {
+          //   name: "MARK",
+          //   phone: "040-444-222",
+          //   reason: "bill",
+          //   amount: 550.5,
+          //   date: "2025-08-02",
+          //   status: "Not Picked",
+          // },
+          // {
+          //   name: "JOHN",
+          //   phone: "040-222-999",
+          //   reason: "bill",
+          //   amount: 123.0,
+          //   date: "2025-08-03",
+          //   status: "Success",
+          // },
         ];
+
+        // Data for user summaries
+        const userSummaries = {
+          David: "MAX's summary: The customer was successfully reached, and a payment plan was agreed upon. He will pay the outstanding credit amount within the next 3 months.",
+          LISA: "LISA's summary: The call to Lisa was not picked up. A follow-up call is scheduled for tomorrow morning to discuss her outstanding loan balance.",
+          ANNA: "ANNA's summary: Anna was successfully contacted, and she has agreed to clear her loan account by the end of the week. No further action is required.",
+          MARK: "MARK's summary: Mark could not be reached. The phone went to voicemail. An automated reminder has been sent regarding his outstanding bill.",
+          JOHN: "JOHN's summary: The call with John was a success. He made a full payment for his bill. The account is now cleared.",
+        };
 
         const container = document.getElementById("cardsContainer");
         const statusFilter = document.getElementById("statusFilter");
         const sortFilter = document.getElementById("sortFilter");
-
-        flatpickr("#date-range-picker", {
-          mode: "range",
-          dateFormat: "Y-m-d",
-          altInput: true,
-          altFormat: "F j, Y",
-        });
 
         function renderCards(data) {
           container.innerHTML = "";
@@ -407,34 +486,34 @@
             card.className = "col-lg-4 col-md-6";
             const statusClass =
               user.status === "Success" ? "status-success" : "status-fail";
+              // user.status === "Pending" ? "status-pending" : "status-fail";
             card.innerHTML = `
-            <div class="card report-card" style ="background-color : smokewhite;">
-              <h5 class="card-title">${user.name}</h5>
-              <p><strong>Reason:</strong> ${user.reason}</p>
-              <p><strong>Due Amount:</strong> $${user.amount.toFixed(2)}</p>
-              <p class="status-text ${statusClass}"><strong>Call Status:</strong> ${
+                <div class="card report-card" style="background-color: smokewhite;">
+                  <h5 class="card-title">${user.name}</h5>
+                  <p><strong>Reason:</strong> ${user.reason}</p>
+                  <p><strong>Due Amount:</strong> $${user.amount.toFixed(2)}</p>
+                  <p class="status-text ${statusClass}"><strong>Call Status:</strong> ${
               user.status
             }</p>
-              <div class="card-actions">
-                <button class="btn btn-sm btn-outline-primary" data-bs-toggle="modal" data-bs-target="#transcriptModal" data-user-name="${
-                  user.name
-                  //Below this add the other button
-                }">Veiw Summary</button>
-
-                <button class="btn btn-sm btn-outline-secondary" data-bs-toggle="modal" data-bs-target="#detailsModal" data-user-name="${
-                  user.name
-                }">Additional Remark</button>
-              </div>
-            </div>`;
+                  <div class="card-actions">
+                    <button class="btn btn-sm btn-outline-primary" data-bs-toggle="modal" data-bs-target="#transcriptModal" data-user-name="${
+                      user.name
+                    }">Recent Call Summary</button>
+                    <button class="btn btn-sm btn-outline-secondary" data-bs-toggle="modal" data-bs-target="#reportIssueModal" data-user-name="${
+                      user.name
+                    }">Call Summaries</button>
+                  </div>
+                </div>`;
             container.appendChild(card);
           });
         }
 
         function sortData(data, sortBy) {
-          return data.sort((a, b) => {
-            if (sortBy === "date") return new Date(a.date) - new Date(b.date);
-            return a.amount - b.amount;
-          });
+          return data.sort((a, b) =>
+            sortBy === "date"
+              ? new Date(a.date) - new Date(b.date)
+              : a.amount - b.amount
+          );
         }
 
         function updateView() {
@@ -453,30 +532,69 @@
         statusFilter.addEventListener("change", updateView);
         sortFilter.addEventListener("change", updateView);
 
+        // Event listener for the transcript modal
         document
           .getElementById("transcriptModal")
           .addEventListener("show.bs.modal", function (event) {
             const userName = event.relatedTarget.getAttribute("data-user-name");
+            const transcriptTextarea = this.querySelector(".modal-body textarea");
+
+            // Set the modal title
             this.querySelector(".modal-title").textContent =
               "Transcript for " + userName;
+
+            // Set the summary in the textarea
+            transcriptTextarea.value = userSummaries[userName] || "No summary available.";
           });
 
+        // Event listener for the report issue modal
         document
-          .getElementById("detailsModal")
+          .getElementById("reportIssueModal")
           .addEventListener("show.bs.modal", function (event) {
             const userName = event.relatedTarget.getAttribute("data-user-name");
             this.querySelector(".modal-title").textContent =
-              "Details for " + userName;
+              "Report an issue for " + userName;
           });
 
         updateView();
+
+        // CSV Download Function
+        window.handleUpload = function (button) {
+          const csvRows = [];
+          const headers = Object.keys(allUsers[0]);
+          csvRows.push(headers.join(","));
+
+          allUsers.forEach((user) => {
+            const values = headers.map((header) => `"${user[header]}"`);
+            csvRows.push(values.join(","));
+          });
+
+          const csvData = csvRows.join("\n");
+          const blob = new Blob([csvData], { type: "text/csv" });
+          const url = window.URL.createObjectURL(blob);
+          const a = document.createElement("a");
+          a.setAttribute("hidden", "");
+          a.setAttribute("href", url);
+          a.setAttribute("download", "webcollect_data.csv");
+          document.body.appendChild(a);
+          a.click();
+          document.body.removeChild(a);
+
+          button.classList.remove("btn-primary");
+          button.classList.add("btn-success");
+        };
       });
+
+      // Function to handle the report issue form submission
+      function handleReportSubmission() {
+        alert("Issue submitted successfully!");
+        const reportIssueModal = bootstrap.Modal.getInstance(
+          document.getElementById("reportIssueModal")
+        );
+        reportIssueModal.hide();
+      }
     </script>
+    <script src="../scripts/bot-script.js"></script>
+    <script src="../scripts/post-call-script.js"></script>
   </body>
 </html>
-
-<!--You can add this extra button after the View Transcript this will allow you to show a series of table -->
-
-<!-- <button class="btn btn-sm btn-outline-secondary" data-bs-toggle="modal" data-bs-target="#detailsModal" data-user-name="${
-                user.name
-                 }">Additional Remark</button> -->

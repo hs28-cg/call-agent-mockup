@@ -106,7 +106,7 @@
             </li> -->
             <li class="nav-item">
               <a class="nav-link" href="#" onclick="toggleDropdown(event)">
-                <i class="ph ph-film-script"></i>
+                <i class="ph ph-user-list"></i>
                 <span>Calls</span>
                 <!-- <i class="ph ph-caret-down arrow-icon"></i> -->
               </a>
@@ -128,20 +128,20 @@
 
             <!--For Caller Simulation-->
             <li class="nav-item">
-              <a class="nav-link" href="./caller.html" onclick="toggleDropdown(event)">
+              <a class="nav-link" href="#" onclick="toggleDropdown(event)">
                 <i class="ph ph-phone-call"></i>
-                <span>Caller Agent</span>
+                <span>Caller Agent </span>
                 <!-- <i class="ph ph-caret-down arrow-icon"></i> -->
               </a>
               <ul class="sidebar-dropdown">
                 <li>
-                  <a class="nav-link dropdown-item active" href="#">
+                  <a class="nav-link dropdown-item " href="./caller.html">
                     <i class="ph ph-bell"></i>
                     <span>Call Simulation 1</span>
                   </a>
                 </li>
                 <li>
-                  <a class="nav-link dropdown-item" href="./caller-two.html">
+                  <a class="nav-link dropdown-item active" href="#">
                     <i class="ph ph-bell"></i>
                     <span>Call Simulation 2</span>
                   </a>
@@ -175,7 +175,6 @@
               </a>
             </li>
           </ul>
-          
           <div class="chats-history mt-1">
             <h6 class="text-muted fw-bold ps-3 mb-3">Call History</h6>
             <ul class="nav flex-column">
@@ -238,7 +237,7 @@
           <div class="col-lg-6">
             <div class="card h-40">
               <div class="card-body d-flex flex-column">
-                <h5 class="fw-bold mb-3" style="text-align: center;">Caller Data 1</h5>
+                <h5 class="fw-bold mb-3" style="text-align: center;">Caller Data 2</h5>
                 <div id="drop-zone" class="card text-center p-4">
                   <i class="ph-light ph-file-xls display-4 text-primary mb-3"></i>
                   <p><strong>Drag & Drop Excel/CSV File Here</strong></p>
@@ -276,7 +275,8 @@
             </div>
           </div>
         </div>
-                <!-- <button class="chat-float-btn" id="chatOpenBtn" aria-label="Open chat">
+
+        <!-- <button class="chat-float-btn" id="chatOpenBtn" aria-label="Open chat">
           <img
             src="../asset/Capgemini-Symbol.png"
             alt="Bot"
@@ -299,7 +299,7 @@
           </div>
           <div class="chat-body" id="chatBody">
             <div style="color: #888; font-size: 0.95em">
-              Hi! I’m James, your AR assistant. I can help you with 'invoice', 'account' and 'raise dispute'.
+              Hi! I’m John, your AR assistant. How can I help you today?
             </div>
           </div>
           <form class="chat-input-area" id="chatInputForm" autocomplete="off">
@@ -322,8 +322,8 @@
     </div>
     
     <!-- Bootstrap JS -->
+    <script src="../scripts/excel-reader-calle-two.js"></script>
     <script src="../scripts/bot-script.js"></script>
-    <script src="../scripts/excel-reader-calle.js"></script>
     <script src="../scripts/drop-down-animation.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/xlsx/dist/xlsx.full.min.js"></script>

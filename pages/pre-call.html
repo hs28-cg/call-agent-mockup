@@ -10,14 +10,13 @@
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
       rel="stylesheet"
     />
-
     <link
       href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
       rel="stylesheet"
     />
-
     <!--Style Sheets-->
-    <link rel="stylesheet" href="../style/main-style.css">
+    <link rel="stylesheet" href="../style/main-style.css" />
+    <link rel="stylesheet" href="../style/bot-style.css">
     <link rel="stylesheet" href="../style/caller-style.css" />
     <link
       rel="stylesheet"
@@ -26,81 +25,107 @@
 
     <!--Icons-->
     <script src="https://unpkg.com/@phosphor-icons/web"></script>
+
+    <style>
+      .status-badge {
+        font-size: 0.8rem;
+        padding: 0.4em 0.7em;
+        border-radius: 12px;
+      }
+      .overdue-row {
+        background-color: #ffe6e6 !important;
+      }
+      .search-bar {
+        max-width: 350px;
+        margin-bottom: 10px;
+      }
+
+      /* ✅ Responsive Table Styles */
+      .table-responsive {
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+      }
+
+      .table {
+        min-width: 1200px; /* Prevents squashing on small screens */
+      }
+
+      .table thead th {
+        position: sticky;
+        top: 0;
+        background: #f8f9fa;
+        z-index: 2;
+      }
+    </style>
   </head>
   <body>
     <div class="d-flex">
       <nav class="sidebar vh-100 p-4 d-flex flex-column justify-content-center">
         <div>
-          <img src="../asset/logo.png">
-          <h5 class="headd text-primary fw-bold" style="margin-left: 40px; margin-top: 10px;">AR Webportal</h5>
-          <div class="sidebar-header d-flex align-items-center mb-1">
-            <!--Need to add CG Logo-->
-            <!-- <h5 class="text-primary fw-bold">AR Webportal</h5> -->
-          </div>
+          <img src="../asset/logo.png" />
+          <h5
+            class="headd text-primary fw-bold"
+            style="margin-left: 40px; margin-top: 10px"
+          >
+            AR Webportal
+          </h5>
+          <div class="sidebar-header d-flex align-items-center mb-1"></div>
           <ul class="nav flex-column">
             <li class="nav-item">
               <a class="nav-link" href="../index.html">
-                <!--Each Page Show active-->
                 <i class="ph-bold ph-layout"></i>
-                <!--ICON-->
                 <span>Collection Analytics</span>
               </a>
             </li>
-            <li class="nav-item">
+            <!-- <li class="nav-item">
               <a class="nav-link" href="./caller.html">
                 <i class="ph ph-bell"></i>
                 <span>Caller</span>
               </a>
-            </li>
-            <!--Here we need the Pre-Call and Post-Call -->
-            <!--Having two column setup-->
-
-            <!-- <li class="nav-item">
-              <a class="nav-link" href="./Pages/caller.html">
-                <i class="ph ph-user-list"></i>
-                <span>Calls</span>
-              </a>
             </li> -->
-
             <li class="nav-item">
-              <a class="nav-link active" href="#" onclick="toggleDropdown(event)">
-                <i class="ph ph-user-list"></i>
+              <a
+                class="nav-link active"
+                href="#"
+                onclick="toggleDropdown(event)"
+              >
+                <i class="ph ph-film-script"></i>
                 <span>Calls</span>
-                <i class="ph ph-caret-down arrow-icon"></i>
+                <!-- <i class="ph ph-caret-down arrow-icon"></i> -->
               </a>
               <ul class="sidebar-dropdown">
                 <li>
                   <a class="nav-link dropdown-item active" href="#">
-                    <i class="ph ph-phone-call"></i>
-                    <span>Precall</span>
+                    <i class="ph ph-robot"></i>
+                    <span>Precall Agent</span>
                   </a>
                 </li>
                 <li>
-                  <a
-                    class="nav-link dropdown-item"
-                    href="./post-call.html"
-                  >
-                    <i class="ph ph-phone-disconnect"></i>
-                    <span>Post Call</span>
+                  <a class="nav-link dropdown-item" href="./post-call.html">
+                    <i class="ph ph-robot"></i>
+                    <span>Postcall Agent</span>
                   </a>
                 </li>
               </ul>
             </li>
-
+            <li class="nav-item">
+              <a class="nav-link" href="./caller.html">
+                <i class="ph ph-phone-call"></i>
+                <span>Caller Agent</span>
+              </a>
+            </li>
             <li class="nav-item">
               <a class="nav-link" href="./reports.html">
                 <i class="ph ph-chat-circle-dots"></i>
                 <span>Reports</span>
               </a>
             </li>
-
             <li class="nav-item">
               <a class="nav-link" href="#">
                 <i class="ph ph-chart-bar"></i>
                 <span>Predective Analytics</span>
               </a>
             </li>
-
             <li class="nav-item">
               <a class="nav-link" href="#">
                 <i class="ph ph-gear"></i>
@@ -118,7 +143,6 @@
                 </a>
               </li>
               <li class="nav-item">
-                <!-- Here I need to view the transcript -->
                 <a class="nav-link" href="./History/client-history.html">
                   <i class="ph ph-archive"></i>
                   <span>Client History</span>
@@ -127,7 +151,10 @@
             </ul>
           </div>
         </div>
-        <div class="user-profile d-flex align-items-center p-2 rounded-3" style="margin-top: 25px;">
+        <div
+          class="user-profile d-flex align-items-center p-2 rounded-3"
+          style="margin-top: 10px"
+        >
           <i class="ph-bold ph-user p-1"></i>
           <div class="flex-grow-1">
             <h6 class="mb-0 fw-bold">John Doe</h6>
@@ -135,7 +162,6 @@
           <i class="ph ph-sign-out"></i>
         </div>
       </nav>
-
       <!-- Main Content -->
       <main class="main-content flex-grow-1 p-4">
         <header
@@ -150,7 +176,7 @@
           </h2>
           <div class="d-flex align-items-center">
             <span class="text-muted me-3"
-              >Last Update: 14 August 2024, 03:51 PM</span
+              >Last Update: 17 September 2025, 03:51 PM</span
             >
             <button class="btn btn-icon me-2">
               <i class="ph ph-question"></i>
@@ -158,77 +184,338 @@
             <button class="btn btn-icon"><i class="ph ph-bell"></i></button>
           </div>
         </header>
-
-        <!-- Date Range Picker -->
         <div class="date-range-picker mb-4">
           <i class="ph ph-calendar-blank"></i>
-          <span>14 Aug 2024</span>
+          <span>18 Sept 2025</span>
         </div>
 
-        <!--Here I, will be needing to add the excel reader + The caller Animation-->
+        <!-- Search Bar -->
+        <input
+          type="text"
+          id="search-input"
+          class="form-control search-bar"
+          placeholder="Search by Name, Phone, Email, or Status"
+          />
+          <button class="btn btn-primary md p-2 mb-3">search</button>
+        
 
-        <div class="row g-4">
-          <div class="col-lg-6">
-            <div class="card h-40">
-              <div class="card-body d-flex flex-column">
-                <h5 class="fw-bold mb-3">Pre Caller Data</h5>
-                <div id="drop-zone" class="card text-center p-4">
-                  <i
-                    class="ph-light ph-file-xls display-4 text-primary mb-3"
-                  ></i>
-                  <p><strong>Drag & Drop Excel/CSV File Here</strong></p>
-                  <p class="text-muted small">or click to select</p>
-                  <input
-                    type="file"
-                    id="file-input"
-                    accept=".xlsx, .xls, .csv"
-                    hidden
-                  />
-                </div>
-                <div id="user-list-container" class="mt-3"></div>
-              </div>
-            </div>
-          </div>
+        <!-- Table -->
+        <div class="table-responsive" style="border-radius: 15px; border-style: none;">
+          <table class="table table-hover table-bordered align-middle">
+            <thead class="table-light">
+              <tr>
+                <th>Name</th>
+                <th>Phone</th>
 
-          <div class="col-lg-6">
-            <div class="card h-100">
-              <div class="card-body d-flex flex-column">
-                <h5 class="fw-bold mb-2">
-                  Pre-Caller Context Generation (Simultion)
-                </h5>
-                <div
-                  id="transcription-box"
-                  class="transcription-box flex-grow-1"
-                  id="transcription-box"
-                >
-                  <p class="text-muted">
-                    Simulating a context generation for each user..
-                  </p>
-                </div>
-                <button id="speak-btn" class="btn btn-primary mt-3">
-                  Start Context Generation
-                </button>
-              </div>
-            </div>
-          </div>
+                <th>Invoice Numbers</th>
+                <th>Invoice Amount</th>
+                <th>Status</th>
+                <th>Due Date</th>
+                <th>Aging</th>
+                <th>Total Invoices</th>
+                <th>Credit Memos</th>
+                <th>Overpayments</th>
+                <th>Shortpayments</th>
+                <th>Disputes</th>
+                <th>Credits</th>
+                <th>Action</th>
+              </tr>
+            </thead>
+            <tbody id="user-rows"></tbody>
+          </table>
         </div>
-        <!--Ending the one more row-->
-        <footer class="text-center text-muted" style="margin-top: 10px">
-          <small style="color: #6495ed; font-weight: 800"
-            >© Copgemini 2025. all rights reserved.</small
-          >
-        </footer>
       </main>
     </div>
 
-    <!-- Bootstrap JS -->
-    <!-- <script src="../scripts/excel-reader-caller.js"></script> -->
-    <script src="../scripts/text-excel-reader-caller.js"></script>
-    <!--File Reading Excel-->
+    <!-- Context Modal -->
+    <div class="modal fade" id="contextModal" tabindex="-1" aria-hidden="true">
+      <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">User Information</h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <pre id="context-content" class="p-3 bg-light rounded"></pre>
+          </div>
+          <div class="modal-footer">
+            <button id="download-btn" class="btn btn-success">
+              <i class="ph ph-download-simple"></i> Download
+            </button>
+            <button class="btn btn-secondary" data-bs-dismiss="modal">
+              Close
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+<!--button-->
+    <!-- <button class="chat-float-btn" id="chatOpenBtn" aria-label="Open chat">
+          <img
+            src="../asset/Capgemini-Symbol.png"
+            alt="Bot"
+            style="
+              width: 50px;
+              height: 52px;
+              border-radius: 50%;
+              object-fit: cover;
+            "
+          />
+        </button> -->
+
+        <div class="floating-chat-window" id="floatingChatWindow">
+          <div class="chat-header">
+            <img src="../asset/Capgemini-Symbol.png" alt="Bot" />
+            <span class="chat-bot-name">John - AR Bot</span>
+            <button class="chat-close-btn" id="chatCloseBtn" title="Close chat">
+              &times;
+            </button>
+          </div>
+          <div class="chat-body" id="chatBody">
+            <div style="color: #888; font-size: 0.95em">
+              Hi! I’m James, your AR assistant. I can help you with 'invoice', 'account' and 'raise dispute'.
+            </div>
+          </div>
+          <form class="chat-input-area" id="chatInputForm" autocomplete="off">
+            <input
+              type="text"
+              id="chatInput"
+              placeholder="Type your message..."
+              autocomplete="off"
+            />
+            <button type="submit">Send</button>
+          </form>
+        </div>
+
+    <!-- Scripts -->
+    <script src="../scripts/bot-script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <script src="../scripts/drop-down-animation.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/xlsx/dist/xlsx.full.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/dayjs@1/dayjs.min.js"></script>
+
+    <script>
+      const userRows = document.getElementById("user-rows");
+      const searchInput = document.getElementById("search-input");
+      let currentContext = "";
+
+      // Sample Data
+      const sampleData = [
+        {
+          Name: "David Miller",
+          Phone: "040-123-123",
+
+          Invoice_Numbers: ["INV422696411001  INV422696411003"],
+          Invoice_Amount: "$5000",
+          Status: "Pending",
+          Duedate: "2025/08/25",
+          Aging: "20 Days",
+          Total_Invoices: 2,
+          Credit_Memos: 2,
+          Overpayments: 3,
+          Shortpayments: 1,
+          Disputes: "$1250",
+          Credits: "$200",
+          Notes: "Cleared First three EMI, Having payment issue will clear by 2025/01/01",
+          Notes_2: "Raised Disputed Over $1250 asked for payment summary",
+        },
+        {
+          Name: "Sophia Anderson",
+          Phone: "040-123-321",
+
+          Invoice_Numbers: "INV422796411004",
+          Invoice_Amount: "$3000",
+          Status: "Cleared",
+          Duedate: "2025/09/20",
+          Aging: "10 Days",
+          Total_Invoices: 1,
+          Credit_Memos: 2,
+          Overpayments: 1,
+          Shortpayments: 2,
+          Disputes: "$0",
+          Credits: "$3000",
+          Notes: "Raised Disputes over $200, Intrest charges",
+          Notes_2: "Cleared the dispute, over $200",
+          Notes_3: "Cleared the payment and asked for Recipt.",
+        },
+      ];
+
+      function getStatusBadge(status) {
+        if (status === "Pending")
+          return `<span class="badge bg-danger status-badge">${status}</span>`;
+        if (status === "Cleared")
+          return `<span class="badge bg-success status-badge">${status}</span>`;
+        return `<span class="badge bg-secondary status-badge">${status}</span>`;
+      }
+
+      function renderTable(data) {
+        userRows.innerHTML = "";
+        const today = new Date();
+
+        data.forEach((user, idx) => {
+          const dueDate = new Date(user.Duedate);
+          const isOverdue = dueDate < today && user.Status !== "Cleared";
+
+          const tr = document.createElement("tr");
+          if (isOverdue) tr.classList.add("overdue-row");
+
+          tr.innerHTML = `
+            <td>${user.Name}</td>
+            <td>${user.Phone || ""}</td>
+
+            <td>${user.Invoice_Numbers || ""}</td>
+            <td><span class="fw-semibold text-primary">${
+              user.Invoice_Amount || ""
+            }</span></td>
+            <td>${getStatusBadge(user.Status)}</td>
+            <td>${user.Duedate || ""}</td>
+            <td>${user.Aging || ""}</td>
+            <td>${user.Total_Invoices || ""}</td>
+            <td>${user.Credit_Memos || ""}</td>
+            <td>${user.Overpayments || ""}</td>
+            <td>${user.Shortpayments || ""}</td>
+            <td><span class="text-danger">${user.Disputes || ""}</span></td>
+            <td><span class="text-success">${user.Credits || ""}</span></td>
+            <td>
+              <button class="btn btn-sm btn-primary d-flex align-items-center gap-1" onclick="generateContext(${idx})">
+                <i class="ph ph-text-align-left"></i> Context
+              </button>
+            </td>
+          `;
+          userRows.appendChild(tr);
+        });
+      }
+
+      function generateContext(index) {
+        const user = sampleData[index];
+        if (user.Name === "David Miller") {
+          currentContext = `
+#=================================
+Context:
+#=================================
+User: ${user.Name}
+Users Current Status: ${user.Status}
+Due Date: ${user.Duedate}
+Total Invoices: ${user.Total_Invoices}
+Call History:
+2025/04/01 : ${user.Notes}
+2025/11/14 : ${user.Notes_2}
+Call Objective: Confirm Payment status, address dispute, provide payment summary, agree on next steps
+
+ENSURE THE PAYMENT IS CLEARED IN NEXT 3-4 DAYS
+
+#=================================
+System Context Generated
+#=================================
+
+You are Lisa, an AR Collections Assistant at ODP Business Solutions. Generate a pre-call script for overdue invoices.
+
+### Logic:
+
+- If notes absent → Initial Reminder; if present → Second Reminder with notes.
+- Push for payment within 3-4 days, max 5.
+- Handle disputes politely; secure at least partial payment.
+
+### Script:
+
+**Greeting:**  
+Hi, this is Lisa from ODP Business Solutions. Am I speaking with {name}?  
+- NO → David Miller 'Wrong Contact', end call.  
+- YES → Proceed.
+
+**Reminder:**  
+- **No notes:** Your {total_invoices} invoice(s) — {invoice_numbers}, ₹{amount}, due {due_date}. Paid yet?  
+- **With notes:** Follow-up on {total_invoices} invoice(s) — {invoice_numbers}, ₹{amount}, due {due_date}. Last note: {notes}. Paid yet?
+
+**Responses:**  
+- **Will pay:** Confirm date/method; if vague, negotiate 3-4 days.  
+- **Dispute:** Log issue, request details, ask for undisputed or partial payment.
+
+**Validation:** Confirm phone/email ({phone}, {gmail}) and questions.
+
+**Closing:** Thank you, Mr./Ms. {name.split()[0]}. Account updated; ensure timely payment or dispute resolution.
+"""
+          `;
+        } else {
+          currentContext = `
+#=================================
+Context:
+#=================================
+User: ${user.Name}
+Users Current Status: ${user.Status}
+Due Date: ${user.Duedate}
+Total Invoices: ${user.Total_Invoices}
+Call History:
+2025/04/01 : ${user.Notes}
+2025/11/14 : ${user.Notes_2}
+2025/11/20 : ${user.Notes_3}
+Call Objective: Confirm Payment status, address dispute, provide payment summary and check if user recived the transaction recipt.
+
+ENSURE THE ISSUE IS RESOLVED
+
+#=================================
+System Context Generated
+#=================================
+
+You are Lisa, an AR Collections Assistant at ODP Business Solutions. Generate a pre-call script for overdue invoices.
+
+### Logic:
+
+- If notes absent → Initial Reminder; if present → Second Reminder with notes.
+- Push for payment within 3-4 days, max 5.
+- Handle disputes politely; secure at least partial payment.
+
+### Script:
+
+**Greeting:**  
+Hi, this is Lisa from ODP Business Solutions. Am I speaking with {name}?  
+- NO → David Miller 'Wrong Contact', end call.  
+- YES → Proceed.
+
+**Reminder:**  
+- **No notes:** Your {total_invoices} invoice(s) — {invoice_numbers}, ₹{amount}, due {due_date}. Paid yet?  
+- **With notes:** Follow-up on {total_invoices} invoice(s) — {invoice_numbers}, ₹{amount}, due {due_date}. Last note: {notes}. Paid yet?
+
+**Responses:**  
+- **Will pay:** Confirm date/method; if vague, negotiate within 4-5 days.  
+- **Dispute:** Log issue, request details, ask for undisputed or partial payment.
+
+**Validation:** Confirm phone/email ({phone}, {gmail}) and questions.
+
+**Closing:** Thank you, Mr./Ms. {name.split()[0]}. Account updated; ensure timely payment or dispute resolution.
+"""
+          `;
+        }
+
+        document.getElementById("context-content").textContent = currentContext;
+        new bootstrap.Modal(document.getElementById("contextModal")).show();
+      }
+
+      document.getElementById("download-btn").addEventListener("click", () => {
+        const blob = new Blob([currentContext], { type: "text/plain" });
+        const link = document.createElement("a");
+        link.href = URL.createObjectURL(blob);
+        link.download = "context.txt";
+        link.click();
+      });
+
+      // Search functionality
+      searchInput.addEventListener("keyup", () => {
+        const term = searchInput.value.toLowerCase();
+        const filtered = sampleData.filter(
+          (u) =>
+            u.Name.toLowerCase().includes(term) ||
+            u.Phone.toLowerCase().includes(term) ||
+            u.Email.toLowerCase().includes(term) ||
+            u.Status.toLowerCase().includes(term)
+        );
+        renderTable(filtered);
+      });
+
+      // Initial load
+      renderTable(sampleData);
+    </script>
   </body>
 </html>

@@ -1,13 +1,5 @@
-<!--
+<!--Page For Call History-->
 
-
-
-
-
-
-
-
--->
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -28,7 +20,7 @@
 
     <!--Style Sheets-->
     <link rel="stylesheet" href="../../style/main-style.css" />
-
+    <link rel="stylesheet" href="../../style/bot-style.css">
     <!--Icons-->
     <script src="https://unpkg.com/@phosphor-icons/web"></script>
   </head>
@@ -56,8 +48,8 @@
             </li>
             <li class="nav-item">
               <a class="nav-link" href="../caller.html">
-                <i class="ph ph-bell"></i>
-                <span>Caller</span>
+                <i class="ph ph-phone-call"></i>
+                <span>Caller Agent</span>
               </a>
             </li>
             <!--Here we need the Pre-Call and Post-Call -->
@@ -72,15 +64,15 @@
 
             <li class="nav-item">
               <a class="nav-link" href="#" onclick="toggleDropdown(event)">
-                <i class="ph ph-user-list"></i>
+                <i class="ph ph-film-script"></i>
                 <span>Calls</span>
                 <i class="ph ph-caret-down arrow-icon"></i>
               </a>
               <ul class="sidebar-dropdown">
                 <li>
                   <a class="nav-link dropdown-item" href="../pre-call.html">
-                    <i class="ph ph-phone-call"></i>
-                    <span>Precall</span>
+                    <i class="ph ph-robot"></i>
+                    <span>Precall Agent</span>
                   </a>
                 </li>
                 <li>
@@ -88,8 +80,8 @@
                     class="nav-link dropdown-item"
                     href="../post-call.html"
                   >
-                    <i class="ph ph-phone-disconnect"></i>
-                    <span>Post Call</span>
+                    <i class="ph ph-robot"></i>
+                    <span>Postcall Agent</span>
                   </a>
                 </li>
               </ul>
@@ -158,7 +150,7 @@
           </h2>
           <div class="d-flex align-items-center">
             <span class="text-muted me-3"
-              >Last Update: 14 August 2024, 03:51 PM</span
+              >Last Update: 17 September 2025, 03:51 PM</span
             >
             <button class="btn btn-icon me-2">
               <i class="ph ph-question"></i>
@@ -170,24 +162,28 @@
         <!-- Date Range Picker -->
         <div class="date-range-picker mb-4">
           <i class="ph ph-calendar-blank"></i>
-          <span>14 Aug 2024</span>
+          <span>18 Sept 2025</span>
         </div>
 
         <!--Here I, will be needing to add the excel reader + The caller Animation-->
         <div class="list-group call-log">
                 <!-- Call Log Item 1 -->
                 <div class="list-group-item call-log-item">
-                    <div class="call-status-icon status-success"><i class="ph ph-phone-incoming"></i></div>
+                    <!-- <div class="call-status-icon status-success"><i class="ph ph-phone-incoming"></i></div> -->
+                    <div class="call-status-icon status-fail"><i class="ph ph-phone-slash"></i></div>
                     <div class="call-details">
-                        <h5 class="#">MAX</h5>
+                        <h5 class="#">David Miller
+                          <span class="badge bg-danger ms-2">x1</span>
+                        </h5>
                         <small>10:15 AM</small>
                     </div>
-                    <div class="call-duration">5m 32s</div>
+                    <div class="call-duration">0m 32s</div>
                     <button class="btn btn-sm btn-outline-primary" data-bs-toggle="modal" data-bs-target="#transcriptModal" data-client-name="MAX">Summary</button>
                     <button class="btn btn-sm btn-outline-success" data-bs-toggle="modal" data-bs-target="#transcriptModal" data-client-name="MAX" onclick="window.location.href='../reports.html'">Transcript</button>
                 </div>
+
                 <!-- Call Log Item 2 -->
-                <div class="list-group-item call-log-item">
+                <!-- <div class="list-group-item call-log-item">
                     <div class="call-status-icon status-fail"><i class="ph ph-phone-slash"></i></div>
                     <div class="call-details">
                         <h5 class="d-flex align-items-center">
@@ -199,35 +195,40 @@
                     <div class="call-duration">0m 12s</div>
                     <button class="btn btn-sm btn-outline-primary" data-bs-toggle="modal" data-bs-target="#transcriptModal" data-client-name="LISA">Summary</button>
                     <button class="btn btn-sm btn-outline-success" data-bs-toggle="modal" data-bs-target="#transcriptModal" data-client-name="LISA" onclick="window.location.href='../reports.html'" >Transcript</button>
-                </div>
+                </div> -->
+
                  <!-- Call Log Item 3 -->
                 <div class="list-group-item call-log-item">
                     <div class="call-status-icon status-success"><i class="ph ph-phone-outgoing"></i></div>
                     <div class="call-details">
-                        <h5 class="#">JOHN</h5>
+                        <h5 class="#">Sophia Anderson</h5>
                         <small>11:05 AM</small>
                     </div>
-                    <div class="call-duration">8m 05s</div>
+                    <div class="call-duration">2m 05s</div>
                     <button class="btn btn-sm btn-outline-primary" data-bs-toggle="modal" data-bs-target="#transcriptModal" data-client-name="JOHN">Summary</button>
                     <button class="btn btn-sm btn-outline-success" data-bs-toggle="modal" data-bs-target="#transcriptModal" data-client-name="JOHN"  onclick="window.location.href='../reports.html'">Transcript</button>
                 </div>
+
                 <!--call log -4-->
                 <div class="list-group-item call-log-item">
                     <div class="call-status-icon status-fail"><i class="ph ph-phone-slash"></i></div>
                     <div class="call-details">
                         <h5 class="d-flex align-items-center">
                             ANNA
-                            <span class="badge bg-danger ms-2">x3</span>
+                            <span class="badge bg-danger ms-2">x2</span>
                         </h5>
                         <small>11:26 AM</small>
+                        <br>
+                        <small>01:30 PM</small>
                     </div>
                     <div class="call-duration">0m 12s</div>
                     <button class="btn btn-sm btn-outline-primary" data-bs-toggle="modal" data-bs-target="#transcriptModal" data-client-name="LISA">Call Summary</button>
                     <button class="btn btn-sm btn-outline-success" data-bs-toggle="modal" data-bs-target="#transcriptModal" data-client-name="LISA" onclick="window.location.href='../reports.html'" >Transcript</button>
                     <button class="btn btn-sm btn-outline-danger" data-bs-toggle="modal" data-bs-target="#transcriptModal" data-client-name="LISA" onclick = 'alert("User Flagged")'>Flag User</button>
                 </div>
+
                 <!--Call log -5 -->
-                <div class="list-group-item call-log-item">
+                <!-- <div class="list-group-item call-log-item">
                     <div class="call-status-icon status-fail"><i class="ph ph-phone-slash"></i></div>
                     <div class="call-details">
                         <h5 class="d-flex align-items-center">
@@ -239,27 +240,51 @@
                     <div class="call-duration">0m 12s</div>
                     <button class="btn btn-sm btn-outline-primary" data-bs-toggle="modal" data-bs-target="#transcriptModal" data-client-name="LISA">Summary</button>
                     <button class="btn btn-sm btn-outline-success" data-bs-toggle="modal" data-bs-target="#transcriptModal" data-client-name="LISA" onclick="window.location.href='../reports.html'" >Transcript</button>
-                </div>
+                </div> -->
+
             </div>
         </main>
     </div>
 
+    <!--Adding the button-->
+    <!-- <button class="chat-float-btn" id="chatOpenBtn" aria-label="Open chat">
+          <img
+            src="../../asset/Capgemini-Symbol.png"
+            alt="Bot"
+            style="
+              width: 50px;
+              height: 52px;
+              border-radius: 50%;
+              object-fit: cover;
+            "
+          />
+        </button> -->
+
+        <div class="floating-chat-window" id="floatingChatWindow">
+          <div class="chat-header">
+            <img src="../../asset/Capgemini-Symbol.png" alt="Bot" />
+            <span class="chat-bot-name">John - AR Bot</span>
+            <button class="chat-close-btn" id="chatCloseBtn" title="Close chat">
+              &times;
+            </button>
+          </div>
+          <div class="chat-body" id="chatBody">
+            <div style="color: #888; font-size: 0.95em">
+              Hi! I’m James, your AR assistant. I can help you with 'invoice', 'account' and 'raise dispute'.
+            </div>
+          </div>
+          <form class="chat-input-area" id="chatInputForm" autocomplete="off">
+            <input
+              type="text"
+              id="chatInput"
+              placeholder="Type your message..."
+              autocomplete="off"
+            />
+            <button type="submit">Send</button>
+          </form>
+        </div>
+
     <!--Ending the call history container-->
-
-    <!--Here when they ask for view the transcript- I will just redirect them to post call ?-->
-
-    <!--Also i will add the transcipt down-->
-
-
-
-
-
-
-
-
-
-
-
 
         <!--Ending the one more row-->
         <footer class="text-center text-muted" style="margin-top: 10px">
@@ -271,6 +296,7 @@
     </div>
 
     <!-- Bootstrap JS -->
+     <script src="../../scripts/bot-script.js"></script>
      <script src = "../../scripts/drop-down-animation.js"></script>
      <script src="../../scripts/call-history.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>

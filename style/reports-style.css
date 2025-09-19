@@ -1,4 +1,5 @@
 /* --- REPORTS PAGE STYLES --- */
+
 /* .filter-bar {
   display: flex;
   justify-content: center;
@@ -15,21 +16,21 @@
   transition: width 0.3s;
 }
 
-.filter-bar{
-    display: flex;
-    flex-direction: row; /* Ensures the horizontal layout*/
-    justify-content: center;
-    align-items: center;
-    gap: 1.5rem;
-    padding: 1.5rem;
-    background-color: var(--white-color);
-    flex-wrap: wrap-reverse;
+.filter-bar {
+  display: flex;
+  flex-direction: row; /* Ensures the horizontal layout*/
+  justify-content: center;
+  align-items: center;
+  gap: 1.5rem;
+  padding: 1.5rem;
+  background-color: var(--white-color);
+  flex-wrap: wrap-reverse;
 }
 
 .filter-bar .fitler-select,
-.filter-bar .form-control{
-    min-width: 200px;
-    flex: 0 1 auto;
+.filter-bar .form-control {
+  min-width: 250px;
+  flex: 0 1 auto;
 }
 
 .filter-bar .form-select,
@@ -131,37 +132,36 @@ span.flatpickr-weekday {
 
 /*Trying to add scroll-bar to container*/
 #cardsContainer {
-  max-height: 500px; /* Adjust height as needed */
-  overflow-y: auto;  /* Enables vertical scrolling */
+  max-height: 600px; /* Adjust height as needed */
+  overflow-y: auto; /* Enables vertical scrolling */
   padding-right: 4px; /* Optional: prevents content from being hidden behind scrollbar */
 }
 
-
-
-
 /* --- Flatpickr Calendar Custom Theme --- */
 .flatpickr-calendar {
-    background-color: var(--white-color);
-    border-radius: 10px;
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
-    border: 1px solid var(--border-color);
-    font-family: var(--font-family);
+  background-color: var(--white-color);
+  border-radius: 10px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+  border: 1px solid var(--border-color);
+  font-family: var(--font-family);
 }
-.flatpickr-day.selected, .flatpickr-day.startRange, .flatpickr-day.endRange {
-    background: var(--primary-color);
-    border-color: var(--primary-color);
+.flatpickr-day.selected,
+.flatpickr-day.startRange,
+.flatpickr-day.endRange {
+  background: var(--primary-color);
+  border-color: var(--primary-color);
 }
 .flatpickr-day:hover {
-    background: var(--light-blue-bg);
+  background: var(--light-blue-bg);
 }
 .flatpickr-months .flatpickr-month {
-    color: var(--primary-color);
-    font-weight: 600;
+  color: var(--primary-color);
+  font-weight: 600;
 }
 .flatpickr-weekdays {
-    background-color: var(--light-blue-bg);
+  background-color: var(--light-blue-bg);
 }
 span.flatpickr-weekday {
-    color: var(--text-color);
-    font-weight: 500;
+  color: var(--text-color);
+  font-weight: 500;
 }

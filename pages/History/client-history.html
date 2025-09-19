@@ -1,15 +1,5 @@
 
 
-
-
-
-
-
-
-
-
-
-
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -30,6 +20,7 @@
 
     <!--Style Sheets-->
     <link rel="stylesheet" href="../..//style/main-style.css" />
+    <link rel="stylesheet" href="../../style/bot-style.css">
 
     <!--Icons-->
     <script src="https://unpkg.com/@phosphor-icons/web"></script>
@@ -56,8 +47,8 @@
             </li>
             <li class="nav-item">
               <a class="nav-link" href="../caller.html">
-                <i class="ph ph-user-list"></i>
-                <span>Caller</span>
+                <i class="ph ph-phone-call"></i>
+                <span>Caller Agent</span>
               </a>
             </li>
             <!--Here we need the Pre-Call and Post-Call -->
@@ -72,15 +63,15 @@
 
             <li class="nav-item">
               <a class="nav-link" href="#" onclick="toggleDropdown(event)">
-                <i class="ph ph-user-list"></i>
+                <i class="ph ph-film-script"></i>
                 <span>Calls</span>
                 <i class="ph ph-caret-down arrow-icon"></i>
               </a>
               <ul class="sidebar-dropdown">
                 <li>
                   <a class="nav-link dropdown-item" href="../pre-call.html">
-                    <i class="ph ph-phone-call"></i>
-                    <span>Precall</span>
+                    <i class="ph ph-robot"></i>
+                    <span>Precall Agent</span>
                   </a>
                 </li>
                 <li>
@@ -88,8 +79,8 @@
                     class="nav-link dropdown-item"
                     href="../post-call.html"
                   >
-                    <i class="ph ph-phone-disconnect"></i>
-                    <span>Post Call</span>
+                    <i class="ph ph-robot"></i>
+                    <span>Postcall Agent</span>
                   </a>
                 </li>
               </ul>
@@ -158,7 +149,7 @@
           </h2>
           <div class="d-flex align-items-center">
             <span class="text-muted me-3"
-              >Last Update: 14 August 2024, 03:51 PM</span
+              >Last Update: 17 September 2025, 03:51 PM</span
             >
             <button class="btn btn-icon me-2">
               <i class="ph ph-question"></i>
@@ -170,7 +161,7 @@
         <!-- Date Range Picker -->
         <div class="date-range-picker mb-4">
           <i class="ph ph-calendar-blank"></i>
-          <span>14 Aug 2024</span>
+          <span>18 Sept 2025</span>
         </div>
 
         <!--Here I, will be needing to add the excel reader + The caller Animation-->
@@ -183,15 +174,15 @@
 
             <!-- Client Grid -->
              <!--change the height here for the scroll-->
-        <div class="scroll-container" style="max-height:450px; overflow-y :auto;">
+        <div class="scroll-container" style="max-height:650px; overflow-y :auto;">
 
             <div class="row g-4">
                 <!-- Client Card 1 -->
                 <div class="col-lg-4 col-md-6">
                     <div class="card client-card text-center p-3">
-                        <div class="client-avatar bg-primary text-white rounded-circle mx-auto mb-2" style="width:50px;height:50px;display:flex;align-items:center;justify-content:center;font-weight:bold;">M</div>
-                        <h5 class="client-name fw-bold">MAX</h5>
-                        <p class="client-info mb-1">Total Calls: <span style="font-weight:600;">22</span></p>
+                        <div class="client-avatar bg-primary text-white rounded-circle mx-auto mb-2" style="width:50px;height:50px;display:flex;align-items:center;justify-content:center;font-weight:bold;">D</div>
+                        <h5 class="client-name fw-bold">David Miller</h5>
+                        <p class="client-info mb-1">Total Calls: <span style="font-weight:600;">5</span></p>
                         <p class="client-info mb-1" style="color:#6c757d;"><small>Last Contact: 2025-08-19</small></p>
                         <p class="mb-2"><span style="color:red;font-weight:600;">Call Status: Not Received</span></p>
                         <button class="btn btn-danger mt-2" data-bs-toggle="modal" data-client-name="MAX">User Flagged</button>
@@ -202,9 +193,9 @@
                 <!-- Client Card 2 -->
                 <div class="col-lg-4 col-md-6">
                     <div class="card client-card text-center p-3">
-                        <div class="client-avatar bg-warning text-dark rounded-circle mx-auto mb-2" style="width:50px;height:50px;display:flex;align-items:center;justify-content:center;font-weight:bold;">L</div>
-                        <h5 class="client-name fw-bold">LISA</h5>
-                        <p class="client-info mb-1">Total Calls: <span style="font-weight:600;">8</span></p>
+                        <div class="client-avatar bg-warning text-dark rounded-circle mx-auto mb-2" style="width:50px;height:50px;display:flex;align-items:center;justify-content:center;font-weight:bold;">S</div>
+                        <h5 class="client-name fw-bold">Sophia Anderson</h5>
+                        <p class="client-info mb-1">Total Calls: <span style="font-weight:600;">3</span></p>
                         <p class="client-info mb-1" style="color:#6c757d;"><small>Last Contact: 2025-08-18</small></p>
                         <p class="mb-2"><span style="color:green;font-weight:600;">Call Status: Success</span></p>
                         <button class="btn btn-primary mt-2" data-bs-toggle="modal" data-bs-target="#historyModal" data-client-name="LISA">View Full History</button>
@@ -214,17 +205,17 @@
                 <!-- Client Card 3 -->
                 <div class="col-lg-4 col-md-6">
                     <div class="card client-card text-center p-3">
-                        <div class="client-avatar bg-success text-white rounded-circle mx-auto mb-2" style="width:50px;height:50px;display:flex;align-items:center;justify-content:center;font-weight:bold;">J</div>
-                        <h5 class="client-name fw-bold">JOHN</h5>
-                        <p class="client-info mb-1">Total Calls: <span style="font-weight:600;">21</span></p>
+                        <div class="client-avatar bg-success text-white rounded-circle mx-auto mb-2" style="width:50px;height:50px;display:flex;align-items:center;justify-content:center;font-weight:bold;">A</div>
+                        <h5 class="client-name fw-bold">ANNA</h5>
+                        <p class="client-info mb-1">Total Calls: <span style="font-weight:600;">3</span></p>
                         <p class="client-info mb-1" style="color:#6c757d;"><small>Last Contact: 2025-08-19</small></p>
-                        <p class="mb-2"><span style="color:green;font-weight:600;">Call Status: Success</span></p>
-                        <button class="btn btn-primary mt-2" data-bs-toggle="modal" data-bs-target="#historyModal" data-client-name="JOHN">View Full History</button>
+                        <p class="mb-2"><span style="color:red;font-weight:600;">Call Status: Not Received</span></p>
+                        <button class="btn btn-primary mt-2" data-bs-toggle="modal" data-bs-target="#historyModal" data-client-name="ALEX">View Full History</button>
                     </div>
                 </div>
 
                 <!-- Client Card 4 (Not Received) -->
-                <div class="col-lg-4 col-md-6">
+                <!-- <div class="col-lg-4 col-md-6">
                     <div class="card client-card text-center p-3">
                         <div class="client-avatar bg-danger text-white rounded-circle mx-auto mb-2" style="width:50px;height:50px;display:flex;align-items:center;justify-content:center;font-weight:bold;">S</div>
                         <h5 class="client-name fw-bold">MARK</h5>
@@ -233,14 +224,14 @@
                         <p class="mb-2"><span style="color:red;font-weight:600;">Call Status: Not Received</span></p>
                         <button class="btn btn-primary mt-2" data-bs-toggle="modal" data-bs-target="#historyModal" data-client-name="SAM">View Full History</button>
                     </div>
-                </div>
+                </div> -->
             </div>
         </div>
         </main>
     </div>
 
     <!-- Client History Modal -->
-    <div class="modal fade" id="historyModal" tabindex="-1" aria-labelledby="historyModalLabel" aria-hidden="true">
+    <!-- <div class="modal fade" id="historyModal" tabindex="-1" aria-labelledby="historyModalLabel" aria-hidden="true">
       <div class="modal-dialog modal-lg modal-dialog-centered">
         <div class="modal-content">
           <div class="modal-header">
@@ -255,41 +246,64 @@
           </div>
         </div>
       </div>
+    </div> -->
+
+    <div class="modal fade" id="historyModal" tabindex="-1" aria-labelledby="historyModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="historyModalLabel">Full History for...</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <div id="historyTableContainer">
+          </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary" id="downloadExcelBtn">Download Excel</button>
+      </div>
     </div>
+  </div>
+</div>
 
+<!-- adding the bot -->
+ <!-- <button class="chat-float-btn" id="chatOpenBtn" aria-label="Open chat">
+          <img
+            src="../../asset/Capgemini-Symbol.png"
+            alt="Bot"
+            style="
+              width: 50px;
+              height: 52px;
+              border-radius: 50%;
+              object-fit: cover;
+            "
+          />
+        </button> -->
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+        <div class="floating-chat-window" id="floatingChatWindow">
+          <div class="chat-header">
+            <img src="../../asset/Capgemini-Symbol.png" alt="Bot" />
+            <span class="chat-bot-name">John - AR Bot</span>
+            <button class="chat-close-btn" id="chatCloseBtn" title="Close chat">
+              &times;
+            </button>
+          </div>
+          <div class="chat-body" id="chatBody">
+            <div style="color: #888; font-size: 0.95em">
+              Hi! I’m James, your AR assistant. I can help you with 'invoice', 'account' and 'raise dispute'.
+            </div>
+          </div>
+          <form class="chat-input-area" id="chatInputForm" autocomplete="off">
+            <input
+              type="text"
+              id="chatInput"
+              placeholder="Type your message..."
+              autocomplete="off"
+            />
+            <button type="submit">Send</button>
+          </form>
+        </div>
 
 
         <!--Ending the one more row-->
@@ -302,8 +316,10 @@
     </div>
 
     <!-- Bootstrap JS -->
+     <script src="../../scripts/bot-script.js"></script>
      <script src = "../../scripts/drop-down-animation.js"></script>
     <script src="../../scripts/client-history.js"></script>
+    <!-- <script src="../../scripts/client-history.-two.js"></script> -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

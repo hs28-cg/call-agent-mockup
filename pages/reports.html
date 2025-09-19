@@ -18,7 +18,9 @@
 
     <!--Style Sheets-->
     <link rel="stylesheet" href="../style/main-style.css" />
+    <link rel="stylesheet" href="../style/bot-style.css">
     <link rel="stylesheet" href="../style/reports-style.css" />
+    <link rel="stylesheet" href="../style/reports-two.css"/>
     <link
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css"
@@ -46,12 +48,12 @@
                 <span>Collection Analytics</span>
               </a>
             </li>
-            <li class="nav-item">
+            <!-- <li class="nav-item">
               <a class="nav-link" href="./caller.html">
                 <i class="ph ph-bell"></i>
                 <span>Caller</span>
               </a>
-            </li>
+            </li> -->
             <!--Here we need the Pre-Call and Post-Call -->
             <!--Having two column setup-->
 
@@ -64,15 +66,15 @@
 
             <li class="nav-item">
               <a class="nav-link" href="#" onclick="toggleDropdown(event)">
-                <i class="ph ph-user-list"></i>
+                <i class="ph ph-film-script"></i>
                 <span>Calls</span>
-                <i class="ph ph-caret-down arrow-icon"></i>
+                <!-- <i class="ph ph-caret-down arrow-icon"></i> -->
               </a>
               <ul class="sidebar-dropdown">
                 <li>
                   <a class="nav-link dropdown-item" href="./pre-call.html">
-                    <i class="ph ph-phone-call"></i>
-                    <span>Precall</span>
+                    <i class="ph ph-robot"></i>
+                    <span>Precall Agent</span>
                   </a>
                 </li>
                 <li>
@@ -80,11 +82,18 @@
                     class="nav-link dropdown-item"
                     href="./post-call.html"
                   >
-                    <i class="ph ph-phone-disconnect"></i>
-                    <span>Post Call</span>
+                    <i class="ph ph-robot"></i>
+                    <span>Postcall Agent</span>
                   </a>
                 </li>
               </ul>
+            </li>
+            <!--Here I have not linked' will link later on-->
+            <li class="nav-item">
+              <a class="nav-link" href="./caller.html">
+                <i class="ph ph-phone-call"></i>
+                <span>Caller Agent</span>
+              </a>
             </li>
 
             <li class="nav-item">
@@ -150,7 +159,7 @@
           </h2>
           <div class="d-flex align-items-center">
             <span class="text-muted me-3"
-              >Last Update: 14 August 2024, 03:51 PM</span
+              >Last Update: 17 September 2025, 03:51 PM</span
             >
             <button class="btn btn-icon me-2">
               <i class="ph ph-question"></i>
@@ -162,320 +171,299 @@
         <!-- Date Range Picker -->
         <div class="date-range-picker mb-4">
           <i class="ph ph-calendar-blank"></i>
-          <span>14 Aug 2024</span>
+          <span>18 Sept 2025</span>
         </div>
 
         <!-- Filter Bar -->
-        <div class="filter-bar card mb-4">
-          <select id="statusFilter" class="form-select">
-            <option value="all">View All</option>
-            <option value="success">Success</option>
-            <option value="notpicked">Not Picked</option>
+        <div class="main-content">
+      <div class="table-container">
+        <table>
+          <thead>
+            <tr>
+              <th class="header-checkbox"></th>
+              <th style="font-weight: bolder; color: black; font-size: 16px;">Name</th>
+              <th style="font-weight: bolder; color: black; font-size: 16px;">Invoice Type</th>
+              <th style="font-weight: bolder; color: black; font-size: 16px;">Status</th>
+              <th style="font-weight: bolder; color: black; font-size: 16px;">Due Date</th>
+              <th style="font-weight: bolder; color: black; font-size: 16px;">Total Calls Made</th>
+              <th style="font-weight: bolder; color: black; font-size: 16px;">Payment Comments</th>
+              <th style="font-weight: bolder; color: black; font-size: 16px;">Flagged</th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody>
+
+            <tr data-header="Report For : David" data-section-type="Table of contents" data-status="Defaulter" data-target="26-Aug-2025" data-limit=" " data-reviewer="Eddie Lake" style="font-size: 16px;">
+              <td><input type="checkbox" class="row-checkbox"></td>
+              <td>David</td>
+              <td><span class="section-type" style="font-size: 16px;">Credit</span></td>
+              <td><span class="status defaulter"> ❌ Defaulter</span></td>
+              <td>29-Aug-2025</td>
+              <td>4</td>
+              <td>Defaulter</td>
+              <td>YES</td>
+              <td class="options">...</td>
+            </tr>
+
+            <tr data-header="Report For : Sophia Anderson" data-section-type="Table of contents" data-status="Done" data-target="30-Aug-2025" data-limit=" " data-reviewer="Eddie Lake" style="font-size: 16px;">
+              <td><input type="checkbox" class="row-checkbox"></td>
+              <td>Sophia Anderson</td>
+              <td><span class="section-type" style="font-size: 16px;">Loan</span></td>
+              <td><span class="status done">Done</span></td>
+              <td>30-Aug-2025</td>
+              <td>2</td>
+              <td>Payment Cleared</td>
+              <td>NO</td>
+              <td class="options">...</td>
+            </tr>
+
+            <tr data-header="Report For : ANNA" data-section-type="Narrative" data-status="in-process" data-target="31-Aug-2025" data-limit=" " data-reviewer="Eddie Lake" style="font-size: 16px;">
+              <td><input type="checkbox" class="row-checkbox"></td>
+              <td>ANNA</td>
+              <td><span class="section-type" style="font-size: 16px;">Car Loan</span></td>
+              <td><span class="status done">Done</span></td>
+              <td>30-Aug-2025</td>
+              <td>3</td>
+              <td>Payment Waiting</td>
+              <td>Under Review</td>
+              <td class="options">...</td>
+            </tr>
+
+            <!-- <tr data-header="Technical approach" data-section-type="Narrative" data-status="Done" data-target="27" data-limit=" " data-reviewer="Jamik Tashpulatov">
+              <td><input type="checkbox" class="row-checkbox"></td>
+              <td>Technical approach</td>
+              <td><span class="section-type">Narrative</span></td>
+              <td><span class="status done">Done</span></td>
+              <td>27</td>
+              <td>23</td>
+              <td>Jamik Tashpulatov</td>
+              <td class="options">...</td>
+            </tr>
+
+            <tr data-header="Design" data-section-type="Narrative" data-status="In Process" data-target="2" data-limit=" " data-reviewer="Jamik Tashpulatov">
+              <td><input type="checkbox" class="row-checkbox"></td>
+              <td>Design</td>
+              <td><span class="section-type">Narrative</span></td>
+              <td><span class="status in-process">In Process</span></td>
+              <td>2</td>
+              <td>16</td>
+              <td>Jamik Tashpulatov</td>
+              <td class="options">...</td>
+            </tr> -->
+
+            <!-- <tr data-header="Capabilities" data-section-type="Narrative" data-status="In Process" data-target="20" data-limit=" " data-reviewer="Jamik Tashpulatov">
+              <td><input type="checkbox" class="row-checkbox"></td>
+              <td>Capabilities</td>
+              <td><span class="section-type">Narrative</span></td>
+              <td><span class="status in-process">In Process</span></td>
+              <td>20</td>
+              <td>8</td>
+              <td>Jamik Tashpulatov</td>
+              <td class="options">...</td>
+            </tr>
+
+            <tr data-header="Integration with existing systems" data-section-type="Narrative" data-status="In Process" data-target="19" data-limit="21" data-reviewer="Jamik Tashpulatov">
+              <td><input type="checkbox" class="row-checkbox"></td>
+              <td>Integration with existing systems</td>
+              <td><span class="section-type">Narrative</span></td>
+              <td><span class="status in-process">In Process</span></td>
+              <td>19</td>
+              <td>21</td>
+              <td>Jamik Tashpulatov</td>
+              <td class="options">...</td>
+            </tr> -->
+
+            <!--Additional Row-->
+
+            <!-- <tr data-header="Integration with existing systems" data-section-type="Narrative" data-status="In Process" data-target="19" data-limit="21" data-reviewer="Jamik Tashpulatov">
+              <td><input type="checkbox" class="row-checkbox"></td>
+              <td>Integration with existing systems</td>
+              <td><span class="section-type">Narrative</span></td>
+              <td><span class="status in-process">In Process</span></td>
+              <td>19</td>
+              <td>21</td>
+              <td>Jamik Tashpulatov</td>
+              <td class="options">...</td>
+            </tr>
+
+            <tr data-header="Integration with existing systems" data-section-type="Narrative" data-status="In Process" data-target="19" data-limit="21" data-reviewer="Jamik Tashpulatov">
+              <td><input type="checkbox" class="row-checkbox"></td>
+              <td>Integration with existing systems</td>
+              <td><span class="section-type">Narrative</span></td>
+              <td><span class="status in-process">In Process</span></td>
+              <td>19</td>
+              <td>21</td>
+              <td>Jamik Tashpulatov</td>
+              <td class="options">...</td>
+            </tr>
+
+            <tr data-header="Integration with existing systems" data-section-type="Narrative" data-status="In Process" data-target="19" data-limit="21" data-reviewer="Jamik Tashpulatov">
+              <td><input type="checkbox" class="row-checkbox"></td>
+              <td>Integration with existing systems</td>
+              <td><span class="section-type">Narrative</span></td>
+              <td><span class="status in-process">In Process</span></td>
+              <td>19</td>
+              <td>21</td>
+              <td>Jamik Tashpulatov</td>
+              <td class="options">...</td>
+            </tr> -->
+
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <div id="sectionDetailModal" class="modal">
+    <div class="modal-content">
+      <span class="close-button">&times;</span>
+      <div class="modal-header">
+        <h2 id="modal-title"></h2>
+        <!-- <p class="modal-text">Showing total visitors for the last 6 months</p> -->
+      </div>
+
+      <!-- <div class="modal-graph-placeholder">
+        [Graph Image Placeholder]
+      </div> -->
+
+      <div class="trending-text">
+        <!-- Trending up by 5.2% this month <span class="icon">↗</span> -->
+      </div>
+      <p class="modal-text"></p>
+
+      <div class="modal-section-title">Customer Report</div>
+      <div class="modal-grid">
+        <div class="modal-grid-item">
+          <label for="modal-header-input">Report</label>
+          <input type="text" id="modal-header-input" >
+        </div>
+      </div>
+
+      <div class="modal-grid">
+        <div class="modal-grid-item">
+          <label for="modal-type-select">Report Type</label>
+          <select id="modal-type-select">
+            <option value="Cover page">Send For Review</option>
+            <option value="Table of contents">Remove Defaulter</option>
+            <option value="Narrative">Cleared</option>
           </select>
-          <input
-            type="text"
-            id="date-range-picker"
-            class="form-control"
-            placeholder="Select Date Range"
+        </div>
+        <div class="modal-grid-item">
+          <label for="modal-status-select">Team Status</label>
+          <select id="modal-status-select">
+            <option value="In Process">Call Customer</option>
+            <option value="Done">Review</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="modal-grid">
+        <div class="modal-grid-item">
+          <label for="modal-target-input">Date</label>
+          <input type="text" id="modal-target-input">
+        </div>
+
+        <div class="modal-grid-item">
+          <label for="modal-limit-input">Additional Comments</label>
+          <input type="text" id="modal-limit-input">
+        </div>
+      </div>
+
+      <button class="card-button-macha" onclick="alert('Event Recorded')">Sumbit to Collection Team</button>
+    </div>
+  </div>
+<!-- 
+  <button class="chat-float-btn" id="chatOpenBtn" aria-label="Open chat">
+          <img
+            src="../asset/Capgemini-Symbol.png"
+            alt="Bot"
+            style="
+              width: 50px;
+              height: 52px;
+              border-radius: 50%;
+              object-fit: cover;
+            "
           />
-          <select id="sortFilter" class="form-select">
-            <option value="date">Sort by Date</option>
-            <option value="amount">Sort by Amount</option>
-          </select>
-        </div>
+        </button> -->
 
-        <!-- Report Cards Scrollable Container -->
-        <div class="reports-container">
-          <div id="cardsContainer" class="row g-4">
-            <!-- Cards will be injected here by JavaScript -->
-          </div>
-        </div>
-      </main>
-    </div>
-
-    <!-- Transcript Modal -->
-    <div
-      class="modal fade"
-      id="transcriptModal"
-      tabindex="-1"
-      aria-labelledby="transcriptModalLabel"
-      aria-hidden="true"
-    >
-      <div class="modal-dialog modal-lg">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="transcriptModalLabel">
-              Transcript for...
-            </h5>
-            <button
-              type="button"
-              class="btn-close"
-              data-bs-dismiss="modal"
-              aria-label="Close"
-            ></button>
-          </div>
-          <!--Below in the div we can replace it with the message-->
-
-          <!--After each call we need to display the entire transcript here-->
-          <div class="modal-body">
-            <textarea
-              class="form-control"
-              rows="10"
-              placeholder="
-
-MAX         : Hello, who's this?
-Call Agent  : Hello, MAX, this is Tom from Capgemini. I hope you're doing well.
-              I'm reaching out regarding an unpaid invoice of $500.00 for credit
-              that was due on August 01, 2025. Could you please confirm the payment status?
-
-MAX         : I made the payment already.
-
-Call Agent  : Thank you for letting me know, MAX.
-              Could you please provide the payment confirmation or transaction details
-              so we can verify and update our records? Thanks for your help!
-
-MAX         : Sure, I will share it via mail.
-
-Call Agent  : Got it, MAX. I'll check our email records for the payment confirmation.
-              If we need any more information, I'll be in touch.
-              Thanks for your patience and for handling this!
-
-MAX         : Sure, please check and let me know.
-
-Call Agent  : I'll review our email records and confirm the payment for you, MAX.
-              Thank you for your patience. If everything checks out,
-              I'll update you as soon as possible. Have a great day!
-
-MAX         : Sure. Thank you.
-
-Call Agent  : Thank you for your time. Goodbye!
-              "
-            ></textarea>
-          </div>
-          <div class="modal-footer">
-            <button
-              type="button"
-              class="btn btn-secondary"
-              data-bs-dismiss="modal"
-            >
-              Close
-            </button>
-            <button type="button" class="btn btn-primary">
-              Save Transcript
+        <div class="floating-chat-window" id="floatingChatWindow">
+          <div class="chat-header">
+            <img src="../asset/Capgemini-Symbol.png" alt="Bot" />
+            <span class="chat-bot-name">John - AR Bot</span>
+            <button class="chat-close-btn" id="chatCloseBtn" title="Close chat">
+              &times;
             </button>
           </div>
+          <div class="chat-body" id="chatBody">
+            <div style="color: #888; font-size: 0.95em">
+              Hi! I’m James, your AR assistant. I can help you with 'invoice', 'account' and 'raise
+            </div>
+          </div>
+          <form class="chat-input-area" id="chatInputForm" autocomplete="off">
+            <input
+              type="text"
+              id="chatInput"
+              placeholder="Type your message..."
+              autocomplete="off"
+            />
+            <button type="submit">Send</button>
+          </form>
         </div>
-      </div>
-    </div>
 
-    <!-- Details Modal -->
-    <div
-      class="modal fade"
-      id="detailsModal"
-      tabindex="-1"
-      aria-labelledby="detailsModalLabel"
-      aria-hidden="true"
-    >
-      <div class="modal-dialog modal-lg">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="detailsModalLabel">Details for...</h5>
-            <button
-              type="button"
-              class="btn-close"
-              data-bs-dismiss="modal"
-              aria-label="Close"
-            ></button>
-          </div>
-          <div class="modal-body">
-            <table class="table table-bordered">
-              <thead>
-                <tr>
-                  <th>Important Key Points</th>
-                  <th>Yes / No</th>
-                  <!-- <th>Detail 3</th>
-                  <th>Detail 4</th> -->
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td contenteditable="true"></td>
-                  <td contenteditable="true"></td>
-                  <!-- <td contenteditable="true"></td>
-                  <td contenteditable="true"></td> -->
-                </tr>
-                <tr>
-                  <td contenteditable="true"></td>
-                  <td contenteditable="true"></td>
-                  <!-- <td contenteditable="true"></td>
-                  <td contenteditable="true"></td> -->
-                </tr>
-                <tr>
-                  <td contenteditable="true"></td>
-                  <td contenteditable="true"></td>
-                  <!-- <td contenteditable="true"></td>
-                  <td contenteditable="true"></td> -->
-                </tr>
-                <tr>
-                  <td contenteditable="true"></td>
-                  <td contenteditable="true"></td>
-                  <!-- <td contenteditable="true"></td>
-                  <td contenteditable="true"></td> -->
-                </tr>
-                <tr>
-                  <td contenteditable="true"></td>
-                  <td contenteditable="true"></td>
-                  <!-- <td contenteditable="true"></td>
-                  <td contenteditable="true"></td> -->
-                </tr>
-              </tbody>
-            </table>
-          </div>
-          <div class="modal-footer">
-            <button
-              type="button"
-              class="btn btn-secondary"
-              data-bs-dismiss="modal"
-            >
-              Close
-            </button>
-            <button type="button" class="btn btn-primary">Save Details</button>
-          </div>
-        </div>
-      </div>
-    </div>
+
 
     <!-- Bootstrap & Flatpickr JS -->
+     <script src="../scripts/bot-script.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
     <script src="../scripts/drop-down-animation.js"></script>
     <script>
-      document.addEventListener("DOMContentLoaded", function () {
-        const allUsers = [
-          {
-            // Edit this Details, Add them same from the excel sheet only
-            name: "MAX",
-            phone: "040-123-123",
-            reason: "credit",
-            amount: 455.98,
-            date: "2025-08-01",
-            status: "Success",
-          },
-          {
-            name: "LISA",
-            phone: "040-333-111",
-            reason: "loan",
-            amount: 200.0,
-            date: "2025-08-01",
-            status: "Not Picked",
-          },
-          {
-            name: "ANNA",
-            phone: "040-555-789",
-            reason: "loan",
-            amount: 320.45,
-            date: "2025-08-02",
-            status: "Success",
-          },
-          {
-            name: "MARK",
-            phone: "040-444-222",
-            reason: "bill",
-            amount: 550.5,
-            date: "2025-08-02",
-            status: "Not Picked",
-          },
-          {
-            name: "JOHN",
-            phone: "040-222-999",
-            reason: "bill",
-            amount: 123.0,
-            date: "2025-08-03",
-            status: "Success",
-          },
-        ];
+      // Main Content Table and Modal Functionality
+      const statusElements = document.querySelectorAll('.status');
+      const tableRows = document.querySelectorAll('tbody tr');
+      const modal = document.getElementById('sectionDetailModal');
+      const closeButton = document.querySelector('.close-button');
 
-        const container = document.getElementById("cardsContainer");
-        const statusFilter = document.getElementById("statusFilter");
-        const sortFilter = document.getElementById("sortFilter");
-
-        flatpickr("#date-range-picker", {
-          mode: "range",
-          dateFormat: "Y-m-d",
-          altInput: true,
-          altFormat: "F j, Y",
+      statusElements.forEach(statusEl => {
+        statusEl.addEventListener('click', (event) => {
+          event.stopPropagation();
+          const newStatus = statusEl.classList.contains('in-process') ? 'Done' : 'In Process';
+          statusEl.classList.toggle('in-process');
+          statusEl.classList.toggle('done');
+          statusEl.innerHTML = newStatus === 'Done' ? ' Done' : 'In Process';
+          statusEl.closest('tr').dataset.status = newStatus;
         });
-
-        function renderCards(data) {
-          container.innerHTML = "";
-          data.forEach((user) => {
-            const card = document.createElement("div");
-            card.className = "col-lg-4 col-md-6";
-            const statusClass =
-              user.status === "Success" ? "status-success" : "status-fail";
-            card.innerHTML = `
-            <div class="card report-card">
-              <h5 class="card-title">${user.name}</h5>
-              <p><strong>Phone:</strong> ${user.phone}</p>
-              <p><strong>Reason:</strong> ${user.reason}</p>
-              <p><strong>Due Amount:</strong> $${user.amount.toFixed(2)}</p>
-              <p class="text-muted"><small>Due Date: ${user.date}</small></p>
-              <p class="status-text ${statusClass}"><strong>Call Status:</strong> ${
-              user.status
-            }</p>
-              <div class="card-actions">
-                <button class="btn btn-sm btn-outline-primary" data-bs-toggle="modal" data-bs-target="#transcriptModal" data-user-name="${
-                  user.name
-                  //Below this add the other button
-                }">View Transcript</button>
-              </div>
-            </div>`;
-            container.appendChild(card);
-          });
-        }
-
-        function sortData(data, sortBy) {
-          return data.sort((a, b) => {
-            if (sortBy === "date") return new Date(a.date) - new Date(b.date);
-            return a.amount - b.amount;
-          });
-        }
-
-        function updateView() {
-          const status = statusFilter.value;
-          const sortBy = sortFilter.value;
-          let dataToRender =
-            status === "all"
-              ? [...allUsers]
-              : status === "success"
-              ? allUsers.filter((u) => u.status === "Success")
-              : allUsers.filter((u) => u.status === "Not Picked");
-          let sortedData = sortData(dataToRender, sortBy);
-          renderCards(sortedData);
-        }
-
-        statusFilter.addEventListener("change", updateView);
-        sortFilter.addEventListener("change", updateView);
-
-        document
-          .getElementById("transcriptModal")
-          .addEventListener("show.bs.modal", function (event) {
-            const userName = event.relatedTarget.getAttribute("data-user-name");
-            this.querySelector(".modal-title").textContent =
-              "Transcript for " + userName;
-          });
-
-        document
-          .getElementById("detailsModal")
-          .addEventListener("show.bs.modal", function (event) {
-            const userName = event.relatedTarget.getAttribute("data-user-name");
-            this.querySelector(".modal-title").textContent =
-              "Details for " + userName;
-          });
-
-        updateView();
       });
-    </script>
+
+      tableRows.forEach(row => {
+        row.addEventListener('click', () => {
+          const header = row.dataset.header;
+          const sectionType = row.dataset.sectionType;
+          const status = row.dataset.status;
+          const target = row.dataset.target;
+          const limit = row.dataset.limit;
+          
+          document.getElementById('modal-title').textContent = header;
+          document.getElementById('modal-header-input').value = header;
+          document.getElementById('modal-type-select').value = sectionType;
+          document.getElementById('modal-status-select').value = status;
+          document.getElementById('modal-target-input').value = target;
+          document.getElementById('modal-limit-input').value = limit;
+
+          modal.style.display = 'flex';
+        });
+      });
+
+      closeButton.addEventListener('click', () => {
+        modal.style.display = 'none';
+      });
+
+      window.addEventListener('click', (event) => {
+        if (event.target == modal) {
+          modal.style.display = 'none';
+        }
+      });
+  </script>
   </body>
 </html>
 
